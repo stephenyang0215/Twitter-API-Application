@@ -24,10 +24,10 @@ public class UsersDemo {
     // export 'BEARER_TOKEN'='<your_bearer_token>'
 
     public static void main(String args[]) throws IOException, URISyntaxException {
-        String bearerToken = System.getenv("BEARER_TOKEN");
+        String bearerToken = "AAAAAAAAAAAAAAAAAAAAAOUusgEAAAAA%2BzcOga7HbY4LFGh4hTnsoQ8omMk%3D3strCgbeeMXNxxbt7hap2lWax08MwuY3j70TUIsfJ5jBl5aqXh";//System.getenv("BEARER_TOKEN");
         if (null != bearerToken) {
             //Replace comma separated usernames with usernames of your choice
-            String response = getUsers("TwitterDev,TwitterEng", bearerToken);
+            String response = getUsers("@stephenyang0215", bearerToken);
             System.out.println(response);
         } else {
             System.out.println("There was a problem getting you bearer token. Please make sure you set the BEARER_TOKEN environment variable");
