@@ -3,8 +3,11 @@ package org.example;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
+import org.json.simple.parser.ParseException;
 import org.slf4j.LoggerFactory;
 import org.bson.Document;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,5 +20,8 @@ public class Main {
         Database db = new Database();
         Document document = new Document("id", "1").append("name", "John");
         db.collection.insertOne(document);
+
+        TweetsLookup tu = new TweetsLookup();
+        tu.parsing(2);
     }
 }

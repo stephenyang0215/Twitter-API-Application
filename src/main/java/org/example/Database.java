@@ -10,5 +10,7 @@ public class Database {
     // connect to mongodb
     MongoClient client = MongoClients.create("mongodb://localhost:27017");
     MongoDatabase database = client.getDatabase("cs622");
-    MongoCollection<Document> collection = database.getCollection("cs622-project");
+    MongoCollection<Document> collection = database.getCollection("tweets");
+
+
 }
