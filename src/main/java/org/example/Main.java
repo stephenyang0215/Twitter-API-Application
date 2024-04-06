@@ -11,6 +11,9 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        System.getenv("PATH");
+        System.out.println(System.getenv("PATH"));
+        /*
         // configure to show only error logs for db
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
         Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
@@ -22,6 +25,6 @@ public class Main {
         db.collection.insertOne(document);
 
         TweetsLookup tu = new TweetsLookup();
-        tu.parsing(2);
+        tu.parsing(2);*/
     }
 }
