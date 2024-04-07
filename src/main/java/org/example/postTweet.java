@@ -1,11 +1,13 @@
 package org.example;
+import java.util.Scanner;  // Import the Scanner class
 import com.twitter.clientlib.ApiException;
 import com.twitter.clientlib.model.*;
 import com.twitter.clientlib.TwitterCredentialsOAuth2;
 import com.twitter.clientlib.api.TwitterApi;
+import org.bson.Document;
 
 public class postTweet {
-    public static void main(String[] args) {
+    public postTweet() {
         OAuth20GetAccessToken OAuth20 = new OAuth20GetAccessToken();
         TwitterCredentialsOAuth2 credentials = OAuth20.getCredentials();
         //post twitter
@@ -13,9 +15,18 @@ public class postTweet {
         // Set the params values
         TweetCreateRequest tweetCreateRequest = new TweetCreateRequest();
         try {
-            TweetCreateResponse result = api.tweets().createTweet(tweetCreateRequest.text("Hello World From Java app"))
+            Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+            System.out.println("Write the content for your tweet:");
+            String tweets = myObj.nextLine();  // Read user input
+            System.out.println("The content is: " + tweets);  // Output user input
+            TweetCreateResponse result = api.tweets().createTweet(tweetCreateRequest.text(tweets))
                     .execute();
             System.out.println(result);
+            Database mongoDB = new Database();
+            Document document = mongoDB.InsertDocument("postTweets","Tweets", tweets);
+            mongoDB.findAll("postTweets", document);
+            System.out.println("Successfully write record to the database!");
+
         } catch (ApiException e) {
             System.err.println("Exception when calling TweetsApi#createTweet");
             System.err.println("Status code: " + e.getCode());
