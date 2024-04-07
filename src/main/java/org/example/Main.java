@@ -6,6 +6,7 @@ import ch.qos.logback.classic.LoggerContext;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoIterable;
 import org.json.simple.parser.ParseException;
 import org.slf4j.LoggerFactory;
 import org.bson.Document;
@@ -19,15 +20,22 @@ public class Main {
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
         Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
         rootLogger.setLevel(Level.ERROR);
-        new postTweet();
-        /*
+
         //testing for adding a data in
         Database db = new Database();
-        Document document = db.InsertDocument(
-                "postTweets","Tweets", "Hello World From Java app");
+        new postTweet(db);
+        MongoIterable<Document> iterable0 = db.postTweets.find();
+        System.out.println(iterable0.first());
+        MongoIterable<Document> iterable1 = db.bookmarksLookup.find();
+        System.out.println(iterable1.first());
+        MongoIterable<Document> iterable2 = db.recentSearch.find();
+        System.out.println(iterable2.first());
+        MongoIterable<Document> iterable3 = db.timelines.find();
+        System.out.println(iterable3.first());
+        MongoIterable<Document> iterable4 = db.tweetsLookup.find();
+        System.out.println(iterable4.first());
 
-        //Read a Document From a Collection
-        db.findAll("postTweets", document);*/
+
 
     }
 }

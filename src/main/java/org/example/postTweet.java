@@ -7,7 +7,7 @@ import com.twitter.clientlib.api.TwitterApi;
 import org.bson.Document;
 
 public class postTweet {
-    public postTweet() {
+    public postTweet(Database db) {
         OAuth20GetAccessToken OAuth20 = new OAuth20GetAccessToken();
         TwitterCredentialsOAuth2 credentials = OAuth20.getCredentials();
         //post twitter
@@ -22,9 +22,8 @@ public class postTweet {
             TweetCreateResponse result = api.tweets().createTweet(tweetCreateRequest.text(tweets))
                     .execute();
             System.out.println(result);
-            Database mongoDB = new Database();
-            Document document = mongoDB.InsertDocument("postTweets","Tweets", tweets);
-            mongoDB.findAll("postTweets", document);
+            Document document = db.InsertDocument("postTweets","Tweets", tweets);
+            db.findAll("postTweets", document);
             System.out.println("Successfully write record to the database!");
 
         } catch (ApiException e) {
