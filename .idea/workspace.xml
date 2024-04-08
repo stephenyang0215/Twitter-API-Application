@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f02efeb-8f42-43fd-be15-27f613e00a5a" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.bash_profile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +56,8 @@
     "Application.Main.executor": "Run",
     "Application.UsersDemo.executor": "Run",
     "Application.postTweet.executor": "Run",
+    "Docker.dockerfile.executor": "Run",
+    "Docker.mongoDB Container.executor": "Run",
     "Maven.Final_Project [install,--non-recursive].executor": "Run",
     "Maven.Main.executor": "Run",
     "Maven.postTweet.executor": "Run",
@@ -65,7 +69,7 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques",
     "onboarding.tips.debug.path": "/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/Final_Project/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
@@ -77,7 +81,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/org/example" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.dockerfile">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Final_Project" />
@@ -91,8 +95,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Compose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="dockerfile" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="mongoDB Container" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="mongodb/mongodb-community-server:latest" />
+          <option name="containerName" value="mongoDB" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="MONGO_INITDB_ROOT_USERNAME" />
+                <option name="value" value="root" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="MONGO_INITDB_ROOT_PASSWORD" />
+                <option name="value" value="root" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="publishAllPorts" value="true" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Docker.Compose" />
+      <item itemvalue="Docker.dockerfile" />
+      <item itemvalue="Docker.mongoDB Container" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.mongoDB Container" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

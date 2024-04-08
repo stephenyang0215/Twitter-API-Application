@@ -23,9 +23,10 @@ public class Main {
 
         //testing for adding a data in
         Database db = new Database();
-        new postTweet(db);
+        //new postTweet(db);
         MongoIterable<Document> iterable0 = db.postTweets.find();
         System.out.println(iterable0.first());
+        /*
         MongoIterable<Document> iterable1 = db.bookmarksLookup.find();
         System.out.println(iterable1.first());
         MongoIterable<Document> iterable2 = db.recentSearch.find();
@@ -34,6 +35,8 @@ public class Main {
         System.out.println(iterable3.first());
         MongoIterable<Document> iterable4 = db.tweetsLookup.find();
         System.out.println(iterable4.first());
+
+         */
 
 
 
