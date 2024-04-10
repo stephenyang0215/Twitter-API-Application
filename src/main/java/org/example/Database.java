@@ -21,14 +21,14 @@ public class Database {
         //client = MongoClients.create("mongodb://localhost:27017");
         //database = client.getDatabase("cs622");
 
-        // Replace the placeholder with your Atlas connection string
-        //host machine if your container is running locally
+        //host machine connection to database: if your container is running locally: brew services start mongodb-community@7.0
         String uri = "mongodb://root:password@localhost:27017";
-        //container connection
+        //container connection to database
         //String uri = "mongodb://root:password@mongodb:27017";
         // Construct a ServerApi instance using the ServerApi.builder() method
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
+                .strict(true)
                 .build();
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(new ConnectionString(uri))

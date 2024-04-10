@@ -1,7 +1,7 @@
 services:
   mongodb:
     container_name: mongodb
-    image: mongo:4.4.17-focal
+    image: mongo:5.0.0-focal
     restart: always
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root

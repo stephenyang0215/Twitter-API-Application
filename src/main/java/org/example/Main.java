@@ -18,9 +18,25 @@ public class Main {
 
         //testing for adding a data in
         Database db = new Database();
-        //new postTweet(db);
+
+        //Backup plan for posting tweets and write to database
+        //test Arguments: tweets content, access token, database
+        //String tweets = "hello world! this is the tweets from my java app111";
+        //new test(tweets,
+        //"QWVnOUJOdmRrNXZ3cklCZ29GR0p0VTk4NTlvLW50WXd0TWtOeVl2VlF1b2FjOjE3MTI3ODAzMTg0ODk6MToxOmF0OjE",
+        //        db);
+        //Document document = db.InsertDocument("postTweets","Tweets", tweets);
+        //db.findAll("postTweets", document);
+        //System.out.println("Successfully write record to the database!");
+
+        new postTweet(db);
         MongoIterable<Document> iterable0 = db.postTweets.find();
-        //System.out.println(iterable0.first());
+        System.out.println(iterable0.first());
+
+
+
+
+        
         /*
         MongoIterable<Document> iterable1 = db.bookmarksLookup.find();
         System.out.println(iterable1.first());
