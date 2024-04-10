@@ -22,7 +22,10 @@ public class Database {
         //database = client.getDatabase("cs622");
 
         // Replace the placeholder with your Atlas connection string
-        String uri = "mongodb://localhost:27017";
+        //host machine if your container is running locally
+        String uri = "mongodb://root:password@localhost:27017";
+        //container connection
+        //String uri = "mongodb://root:password@mongodb:27017";
         // Construct a ServerApi instance using the ServerApi.builder() method
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
@@ -33,7 +36,7 @@ public class Database {
                 .build();
         // Create a new client and connect to the server
         MongoClient mongoClient = MongoClients.create(settings);
-        database = mongoClient.getDatabase("test");
+        database = mongoClient.getDatabase("db");
         // Send a ping to confirm a successful connection
         Bson command = new BsonDocument("ping", new BsonInt64(1));
         Document commandResult = database.runCommand(command);
