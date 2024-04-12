@@ -10,13 +10,3 @@ RUN mvn dependency:go-offline package -B
 FROM openjdk:8-jdk-alpine
 COPY --from=maven target/Final_Project-1.0-SNAPSHOT-launcher.jar ./app.jar
 ENTRYPOINT ["java","-jar","./app.jar"]
-#RUN mkdir /app
-#COPY . /app
-#WORKDIR /app
-
-#RUN javac /src/main/java/org/example/Main.java
-#CMD ["java", "Main"]
-#COPY db.sh /app/db.sh
-#RUN /bin/bash -c '/app/db.sh'
-
-

@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f02efeb-8f42-43fd-be15-27f613e00a5a" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-seed/Bookmarks-Lookup.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-seed/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-seed/Recent-Search.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-seed/Timelines.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-seed/Tweets-Lookup.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-seed/db.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-seed/postTweets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -71,7 +83,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "1.8",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques",
+    "last_opened_file_path": "/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/data",
     "onboarding.tips.debug.path": "/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/Final_Project/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -80,12 +92,16 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mongo-seed" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Docker.Compose">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -111,7 +127,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
-      <deployment type="docker-image" />
+      <deployment type="docker-image">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
