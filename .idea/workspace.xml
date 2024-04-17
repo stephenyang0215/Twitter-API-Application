@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f02efeb-8f42-43fd-be15-27f613e00a5a" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo-seed/Bookmarks-Lookup.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo-seed/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo-seed/Recent-Search.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo-seed/Timelines.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo-seed/Tweets-Lookup.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo-seed/db.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongo-seed/postTweets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/test.java" beforeDir="false" />
-    </list>
+    <list default="true" id="4f02efeb-8f42-43fd-be15-27f613e00a5a" name="Changes" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,37 +43,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Main.executor": "Run",
-    "Application.UsersDemo.executor": "Run",
-    "Application.postTweet.executor": "Run",
-    "Application.test.executor": "Run",
-    "Docker.Compose.executor": "Run",
-    "Docker.dockerfile.executor": "Run",
-    "Docker.mongoDB Container.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Maven.Final_Project [install,--non-recursive].executor": "Run",
-    "Maven.Main.executor": "Run",
-    "Maven.postTweet.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/data",
-    "onboarding.tips.debug.path": "/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/Final_Project/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.45517242",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UsersDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.postTweet.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Compose.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.mongoDB Container.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Maven.Final_Project [install,--non-recursive].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.postTweet.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/data&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/Final_Project/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45517242&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
