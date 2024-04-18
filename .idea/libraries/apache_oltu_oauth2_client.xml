@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="apache.oltu.oauth2.client" type="repository">
+    <properties maven-id="org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/org.apache.oltu.oauth2.client-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.apache.oltu.oauth2.common-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
