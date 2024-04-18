@@ -33,14 +33,15 @@ public class Main {
         // db: Instance of MongoDB
         String tweets = "hello world! this is the tweets from my java app today is wednesday!";
         String accessToken = "eHUtaE16X2hRb0pEc3BHUDRFUklBSi1QLWNDNEY0TmlnMmRlQUdYLVZYUFBUOjE3MTM0MDc1MjIxNzg6MTowOmF0OjE";
-        //new postTweet(tweets, accessToken, db);
-        //Document document = db.InsertDocument("postTweets","Tweets", tweets);
-        //db.findAll("postTweets", document);
-        //System.out.println("Successfully write record to the database!");
+        //Post new Tweets
+        new postTweet(tweets, accessToken, db);
+        System.out.println("Successfully write record to the database!");
+
         //Display your Twitter user ID
         new findMyUser(accessToken, db);
+
         //Delete Tweets by ID
-        new deleteTweetById(accessToken, "1780754482315644964", db);
+        //new deleteTweetById(accessToken, "1780754482315644964", db);
 
 //        System.out.println("From Main-----------------");
 //        System.out.println(db.lookUp("tweetsLookup", 1));
