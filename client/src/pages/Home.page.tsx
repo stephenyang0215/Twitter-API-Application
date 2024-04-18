@@ -1,6 +1,7 @@
 import {AppShell, Container, Group, TextInput,Text, Button, Card, Stack, AppShellHeader } from '@mantine/core';
 import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import LoginButton from '@/components/LoginButton/LoginButton';
 import TweetCard from '@/components/Card/TweetCard';
 import PostCard from '@/components/PostCard';
 import mediaImage from '@/0tter.jpg'
@@ -12,7 +13,7 @@ export function HomePage() {
       
     <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
       <Text style={{ color: 'white', fontWeight: 1000 }}>Twitter Fetch</Text>
-
+      <LoginButton/>
       </Container>
   </AppShell.Header>
       <Stack

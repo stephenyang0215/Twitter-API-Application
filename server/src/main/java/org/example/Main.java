@@ -1,17 +1,42 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.LoggerContext;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoIterable;
+import org.json.simple.parser.ParseException;
+import org.slf4j.LoggerFactory;
+import org.bson.Document;
+
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // configure to show only error logs for db
+        LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
+        Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
+        rootLogger.setLevel(Level.ERROR);
+
+        // testing for adding a data in
+        Database db = new Database();
+        new postTweet(db);
+        MongoIterable<Document> iterable0 = db.postTweets.find();
+        System.out.println(iterable0.first());
+        /*
+         * MongoIterable<Document> iterable1 = db.bookmarksLookup.find();
+         * System.out.println(iterable1.first());
+         * MongoIterable<Document> iterable2 = db.recentSearch.find();
+         * System.out.println(iterable2.first());
+         * MongoIterable<Document> iterable3 = db.timelines.find();
+         * System.out.println(iterable3.first());
+         * MongoIterable<Document> iterable4 = db.tweetsLookup.find();
+         * System.out.println(iterable4.first());
+         * 
+         */
+
     }
 }
