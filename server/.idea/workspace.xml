@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f02efeb-8f42-43fd-be15-27f613e00a5a" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/../.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../data/Bookmarks-Lookup.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../data/Recent-Search.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../data/Timelines.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../data/Tweets-Lookup.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../data/dump/test/Recent-Search.bson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../data/dump/test/Recent-Search.metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../data/postTweets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../db.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../setting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Home.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Home.page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/deleteTweetById.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/findMyUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/postTweet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Dockerfile" />
         <option value="Class" />
       </list>
     </option>
@@ -57,6 +51,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD:server/.idea/workspace.xml
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -82,21 +77,52 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
     "show.migrate.to.gradle.popup": "false"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UsersDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.postTweet.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Compose.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.mongoDB Container.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Maven.Final_Project [install,--non-recursive].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.postTweet.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/data&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/stephenyang/Documents/GitHub/CS622-Advanced-Programming-Techniques/Final_Project/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45517242&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
+>>>>>>> main:.idea/workspace.xml
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mongo-seed" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
-      <deployment type="docker-image" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Docker.Compose">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="server" />
@@ -132,6 +158,15 @@
       </deployment>
       <method v="2" />
     </configuration>
+<<<<<<< HEAD:server/.idea/workspace.xml
+=======
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+>>>>>>> main:.idea/workspace.xml
     <configuration name="dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -170,7 +205,11 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+<<<<<<< HEAD:server/.idea/workspace.xml
         <item itemvalue="Application.UsersDemo" />
+=======
+        <item itemvalue="Docker.mongoDB Container" />
+>>>>>>> main:.idea/workspace.xml
       </list>
     </recent_temporary>
   </component>
@@ -178,6 +217,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-1.8.0_402-corretto-1.8.0_402-3183f394aec4-8ce719b4" />
+        <option value="jdk-17.0.10-corretto-17.0.10-3183f394aec4-96c0d24d" />
       </set>
     </attachedChunks>
   </component>

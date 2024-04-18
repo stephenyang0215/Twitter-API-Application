@@ -7,15 +7,13 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoIterable;
-import org.json.simple.parser.ParseException;
-import org.slf4j.LoggerFactory;
+import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
+import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
+import org.slf4j.*;
 import org.bson.Document;
 
-import java.io.IOException;
-
 public class Main {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws OAuthSystemException, OAuthProblemException {
         // configure to show only error logs for db
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
         Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
@@ -23,20 +21,38 @@ public class Main {
 
         // testing for adding a data in
         Database db = new Database();
-        new postTweet(db);
-        MongoIterable<Document> iterable0 = db.postTweets.find();
-        System.out.println(iterable0.first());
+        TweetsLookup tu = new TweetsLookup();
+
+        // Run scripts in the Docker Container:
+        // Backup plan for posting tweets
+        // Arguments:
+        // tweets: Tweet Content
+        // accessToken: Access Token for OAuth2 from Postman
+        // db: Instance of MongoDB
+        String tweets = "hello world! this is the tweets from my java app today is wednesday!";
+        String accessToken = "eHUtaE16X2hRb0pEc3BHUDRFUklBSi1QLWNDNEY0TmlnMmRlQUdYLVZYUFBUOjE3MTM0MDc1MjIxNzg6MTowOmF0OjE";
+        // Post new Tweets
+        new postTweet(tweets, accessToken, db);
+        System.out.println("Successfully write record to the database!");
+
+        // Display your Twitter user ID
+        new findMyUser(accessToken, db);
+
+        // Delete Tweets by ID
+        // new deleteTweetById(accessToken, "1780754482315644964", db);
+
+        // System.out.println("From Main-----------------");
+        // System.out.println(db.lookUp("tweetsLookup", 1));
+        // tu.parsing(1);
+
         /*
-         * MongoIterable<Document> iterable1 = db.bookmarksLookup.find();
-         * System.out.println(iterable1.first());
-         * MongoIterable<Document> iterable2 = db.recentSearch.find();
-         * System.out.println(iterable2.first());
-         * MongoIterable<Document> iterable3 = db.timelines.find();
-         * System.out.println(iterable3.first());
-         * MongoIterable<Document> iterable4 = db.tweetsLookup.find();
-         * System.out.println(iterable4.first());
-         * 
+         * Run scripts locally
+         * It requires to authorize the request for access token on the Twitter page.
+         * Copy the code from the redirect url and paste it on the compile
          */
+        // new postTweet(db);
+        // MongoIterable<Document> iterable0 = db.postTweets.find();
+        // System.out.println(iterable0.first());
 
     }
 }

@@ -1,22 +1,63 @@
 services:
   mongodb:
-    image: mongodb/mongodb-community-server:latest
+    container_name: mongodb
+    image: mongo:5.0.0-focal
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
     ports:
-      - "27017:27017"
+      - 27017:27017
     volumes:
-      - mongodb_data:/data/db
+      - mongodb-data:/data/db
+
+  mongo_seeder:
+    build: mongo-seed/.
+    image: mongo-seed
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    volumes:
+      - ./mongo-seed:/mongo-seed
+    command:
+      /mongo-seed/db.sh
+
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express:0.54.0
+    restart: always
+    environment:
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_BASICAUTH_USERNAME=root
+      - ME_CONFIG_BASICAUTH_PASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongodb
+    volumes:
+      - mongodb-data:/data/db
 
   app:
     build:
       context: .
       dockerfile: Dockerfile
+    links:
+      - "mongodb"
     ports:
       - "8080:8080"
-    depends_on:
-      - mongodb
     env_file:
       - .env
+    depends_on:
+      - mongodb
+      - mongo_seeder
+    volumes:
+      - mongodb-data:/data/db
 
 volumes:
-  mongodb_data:
-
+  mongodb-data:
+    name: mongodb-data
