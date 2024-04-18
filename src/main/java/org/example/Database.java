@@ -36,7 +36,7 @@ public class Database {
         //host machine connection to database: if your container is running locally: brew services start mongodb-community@7.0
 //        String uri = "mongodb://localhost:27017";
         //container connection to database
-        String uri = "mongodb://root:password@mongodb:27017";
+         String uri = "mongodb://root:password@mongodb:27017";
         // Construct a ServerApi instance using the ServerApi.builder() method
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)

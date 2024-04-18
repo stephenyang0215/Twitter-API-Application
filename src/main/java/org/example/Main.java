@@ -31,16 +31,20 @@ public class Main {
         // tweets: Tweet Content
         // accessToken: Access Token for OAuth2 from Postman
         // db: Instance of MongoDB
-//        String tweets = "hello world! this is the tweets from my java app running in the container!";
-//        String accessToken = "d3VuWC0tUzNUTVJmOE1fb1V4Q09oV2JIbldpbzloZ3owaFlpejhrN3o0cmloOjE3MTI4OTE3NTQzNjM6MToxOmF0OjE";
-//        new postTweet(tweets, accessToken, db);
-//        Document document = db.InsertDocument("postTweets","Tweets", tweets);
-//        db.findAll("postTweets", document);
-//        System.out.println("Successfully write record to the database!");
+        String tweets = "hello world! this is the tweets from my java app today is wednesday!";
+        String accessToken = "eHUtaE16X2hRb0pEc3BHUDRFUklBSi1QLWNDNEY0TmlnMmRlQUdYLVZYUFBUOjE3MTM0MDc1MjIxNzg6MTowOmF0OjE";
+        //new postTweet(tweets, accessToken, db);
+        //Document document = db.InsertDocument("postTweets","Tweets", tweets);
+        //db.findAll("postTweets", document);
+        //System.out.println("Successfully write record to the database!");
+        //Display your Twitter user ID
+        new findMyUser(accessToken, db);
+        //Delete Tweets by ID
+        new deleteTweetById(accessToken, "1780754482315644964", db);
 
-        System.out.println("From Main-----------------");
-        System.out.println(db.lookUp("tweetsLookup", 1));
-        tu.parsing(1);
+//        System.out.println("From Main-----------------");
+//        System.out.println(db.lookUp("tweetsLookup", 1));
+//        tu.parsing(1);
 
 
         /*
