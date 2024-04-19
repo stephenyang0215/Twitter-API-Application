@@ -42,21 +42,21 @@ services:
     volumes:
       - mongodb-data:/data/db
 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    links:
-      - "mongodb"
-    ports:
-      - "8080:8080"
-    env_file:
-      - .env
-    depends_on:
-      - mongodb
-      - mongo_seeder
-    volumes:
-      - mongodb-data:/data/db
+  #app:
+  #  build:
+  #    context: .
+  #    dockerfile: Dockerfile
+  #  links:
+  #    - "mongodb"
+  #  ports:
+  #    - "8080:8080"
+  #  env_file:
+  #    - .env
+  #  depends_on:
+  #    - mongodb
+  #    - mongo_seeder
+  #  volumes:
+  #    - mongodb-data:/data/db
 
 volumes:
   mongodb-data:

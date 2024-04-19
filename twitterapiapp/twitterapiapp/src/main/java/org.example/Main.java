@@ -36,7 +36,7 @@ public class Main {
         String tweets = "hello world! this is the tweets from my java!!!!!!!!!!!!!";
         String accessToken = "WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE";
         // function1: Post new Tweets
-        new postTweet(tweets, accessToken, db);
+        new postTweet(tweets, accessToken);
         System.out.println("Successfully write record to the database!");
 
         // function2: Display your Twitter user ID
