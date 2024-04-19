@@ -8,21 +8,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.example.postTweet;
 
+import java.util.List;
+
 @RestController
 public class postTweetsController {
     @Autowired
     postTweetsService postTweetsService;
-    @RequestMapping("/getTweetsById")
+    @RequestMapping("/findTweetsById")
     @ResponseBody
-    public postTweetsSpring getTweetsById(@RequestParam("id") String id) {
-        return postTweetsService.getTweetsById(id);
+    public postTweetsSpring findTweetsById(@RequestParam("id") String id) {
+        return postTweetsService.getByTweetsId(id);
     }
 
-    //@RequestMapping("/findAllTweets")
-    //@ResponseBody
-    //public String findAllTweets() {
-    //    return postTweetsService.findAllTweets();
-    //}
+    @RequestMapping("/findAllTweets")
+    @ResponseBody
+    public List<postTweetsSpring> findAllTweets() {
+        return postTweetsService.getAllTweets();
+    }
 
     @RequestMapping("/addTweets")
     @ResponseBody
@@ -37,4 +39,14 @@ public class postTweetsController {
     public Get2UsersMeResponse findMyUser(@RequestParam("accessToken") String accessToken) {
         return postTweetsService.findMyUser(accessToken);
     }
+
+    @RequestMapping("/removeTweetsById")
+    @ResponseBody
+    public String removeTweets(@RequestParam("accessToken") String accessToken,
+                                            @RequestParam("id") String id) {
+        postTweetsService.removeTweets(accessToken, id);
+        return "Successfully delete the record!";
+    }
+
+
 }
