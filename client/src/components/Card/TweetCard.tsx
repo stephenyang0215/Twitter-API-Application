@@ -3,8 +3,10 @@ import {Avatar, Card, Stack,SimpleGrid, Container, Image, Text, Group, Button, u
 type TweetCardProps = {
   name: string;
   account: string;
-  time: string;
+  time: Date;
   tweet: string;
+  url: string;
+  hashtag: string[];
   views: number;
   imageUrl: string;
 };
@@ -43,7 +45,7 @@ const TweetCard = ({name, account, time, tweet, views, imageUrl }: TweetCardProp
             <Text weight={500} >{name}</Text>
             
 
-            <Text  color={theme.colorScheme === 'dark' ? 'dark' : 'dimmed'}>@{account}</Text>
+            <Text  color={theme.colorScheme === 'dark' ? 'dark' : 'dimmed'}>{account}</Text>
           </SimpleGrid>
         </Group>
         <Text>{tweet}</Text>

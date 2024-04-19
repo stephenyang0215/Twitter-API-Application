@@ -8,7 +8,18 @@ import mediaImage from '@/0tter.jpg'
 
 export function HomePage() {
   return (
-    <AppShell>
+    <AppShell
+    header={{ height: 60 }}
+    navbar={{
+      width: 300,
+      breakpoint: 'sm',
+      collapsed: { mobile: !opened },
+    }}
+    padding="md"
+    
+    >
+      
+      
     <AppShell.Header Headerheight={100} p="xs" style={{ backgroundColor: '#1DA1F2', color: 'white' }}>
       
     <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
@@ -16,6 +27,12 @@ export function HomePage() {
       <LoginButton/>
       </Container>
   </AppShell.Header>
+  <AppShell.Navbar>
+    <Stack>
+      
+
+    </Stack>
+  </AppShell.Navbar>
       <Stack
       h={1000}
       bg="var(--mantine-color-body)"
