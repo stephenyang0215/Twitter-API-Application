@@ -2,12 +2,17 @@ package org.example;
 import java.util.*;
 
 import com.twitter.clientlib.ApiException;
+import com.twitter.clientlib.JSON;
 import com.twitter.clientlib.model.*;
 import com.twitter.clientlib.TwitterCredentialsOAuth2;
 import com.twitter.clientlib.api.TwitterApi;
 import org.bson.Document;
 
 public class postTweet {
+    public postTweet() {
+
+    }
+
     private List<Document> generateMongoDocs(List<String> lines) {
         List<Document> docs = new ArrayList<>();
         for (String json : lines) {
@@ -16,7 +21,7 @@ public class postTweet {
         return docs;
     }
 
-    postTweet(Database db) {
+    public postTweet(Database db) {
         OAuth20GetAccessToken OAuth20 = new OAuth20GetAccessToken();
         TwitterCredentialsOAuth2 credentials = OAuth20.getCredentials();
         //post twitter
@@ -43,7 +48,7 @@ public class postTweet {
             e.printStackTrace();
         }
     }
-    public postTweet(String tweets, String accessToken) {
+    public String postTweet(String tweets, String accessToken) {
         TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2(
                 "d0kzQnBOcDl3Y3RfUXhVcHVha3Q6MTpjaQ",
                 "C105RUOmrd6zOth8BCD3TbWUj4KlfxXxEIjCGJYBM6tO59JB-a",
@@ -53,15 +58,17 @@ public class postTweet {
         TwitterApi api = new TwitterApi(credentials);
         // Set the params values
         TweetCreateRequest tweetCreateRequest = new TweetCreateRequest();
+        TweetCreateResponse result = null;
         try {
             System.out.println("The content is: " + tweets);  // Output user input
-            TweetCreateResponse result = api.tweets().createTweet(tweetCreateRequest.text(tweets))
+            result = api.tweets().createTweet(tweetCreateRequest.text(tweets))
                     .execute();
-            System.out.println(result);
+            //System.out.println(result);
             //Document document = db.InsertDocument("postTweets","Tweets", tweets);
             //Document document = db.InsertDocument("postTweets","Tweets", result.toJson());
             //db.findAll("postTweets", document);
-            System.out.println("Successfully write record to the database!");
+            //System.out.println("Successfully write record to the database!");
+            return result.toJson();
 
         } catch (ApiException e) {
             System.err.println("Exception when calling TweetsApi#createTweet");
@@ -70,5 +77,6 @@ public class postTweet {
             System.err.println("Response headers: " + e.getResponseHeaders());
             e.printStackTrace();
         }
+        return result.toJson();
     }
 }

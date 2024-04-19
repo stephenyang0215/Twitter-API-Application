@@ -36,11 +36,12 @@ public class Main {
         String tweets = "hello world! this is the tweets from my java!!!!!!!!!!!!!";
         String accessToken = "WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE";
         // function1: Post new Tweets
-        new postTweet(tweets, accessToken);
+        //new postTweet(tweets, accessToken);
         System.out.println("Successfully write record to the database!");
 
         // function2: Display your Twitter user ID
-        new findMyUser(accessToken);
+        findMyUser me = new findMyUser(accessToken);
+        me.display();
 
         // function3: Delete Tweets by ID
         // new deleteTweetById(accessToken, "1780754482315644964", db);

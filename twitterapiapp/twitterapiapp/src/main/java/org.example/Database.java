@@ -57,24 +57,24 @@ public class Database {
         postTweets = database.getCollection("postTweets");
         bookmarksLookup = database.getCollection("bookmarksLookup");
         //Retrieving the documents
-        MongoIterable<Document> iterable0 = bookmarksLookup.find();
+        //MongoIterable<Document> iterable0 = bookmarksLookup.find();
 //        System.out.println(iterable0.first());
         //importJson("bookmarksLookup", "data/Bookmarks-Lookup.json");
         recentSearch = database.getCollection("recentSearch");
-        MongoIterable<Document> iterable1 = recentSearch.find();
+        //MongoIterable<Document> iterable1 = recentSearch.find();
 //        System.out.println(iterable1.first());
         //importJson("bookmarksLookup", "data/Recent-Search.json");
         timelines = database.getCollection("timelines");
-        MongoIterable<Document> iterable2 = timelines.find();
+        //MongoIterable<Document> iterable2 = timelines.find();
 //        System.out.println(iterable2.first());
         //importJson("timelines", "data/Timelines.json");
         tweetsLookup = database.getCollection("tweetsLookup");
-        MongoIterable<Document> iterable3 = tweetsLookup.find();
+        //MongoIterable<Document> iterable3 = tweetsLookup.find();
 //        if (iterable3.first() == null){
 //            String filePath = "data/Tweets-Lookup.json";
 //            addTweets_LookuptoDB("tweetsLookup", filePath);
 //        }
-        System.out.println(iterable3.first());
+        //System.out.println(iterable3.first());
         //importJson("tweetsLookup", "data/Tweets-Lookup.json");
     }
 
@@ -156,5 +156,9 @@ public class Database {
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public MongoCollection<Document> getPostTweets() {
+        return postTweets;
     }
 }

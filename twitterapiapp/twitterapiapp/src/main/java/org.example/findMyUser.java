@@ -9,6 +9,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class findMyUser {
+    TwitterApi api;
+    Set<String> userFields;
+    Set<String> expansions;
+    Set<String> tweetFields;
     public findMyUser(String accessToken) {
         TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2(
                 "d0kzQnBOcDl3Y3RfUXhVcHVha3Q6MTpjaQ",
@@ -16,14 +20,19 @@ public class findMyUser {
                 accessToken,
                 "https://api.twitter.com/2/oauth2/token");
         //post twitter
-        TwitterApi api = new TwitterApi(credentials);
+        api = new TwitterApi(credentials);
 
         // Set the params values
-        Set<String> userFields = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of User fields to display.
-        Set<String> expansions = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of fields to expand.
-        Set<String> tweetFields = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of Tweet fields to display.
+        userFields = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of User fields to display.
+        expansions = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of fields to expand.
+        tweetFields = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of Tweet fields to display.
+
+    }
+
+    public Get2UsersMeResponse display() {
+        Get2UsersMeResponse result = null;
         try {
-            Get2UsersMeResponse result = api.users().findMyUser()
+            result = api.users().findMyUser()
                     .userFields(userFields)
                     .expansions(expansions)
                     .tweetFields(tweetFields)
@@ -36,5 +45,6 @@ public class findMyUser {
             System.err.println("Response headers: " + e.getResponseHeaders());
             e.printStackTrace();
         }
+        return result;
     }
 }
