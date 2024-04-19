@@ -1,6 +1,7 @@
 package com.example.twitterapiapp.login;
 
 import ch.qos.logback.core.model.Model;
+import org.example.findMyUser;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,8 +36,8 @@ public class LoginController {
     }
 
     @GetMapping("/findMyUser")
-    public String find() {
-        new findMyUser(accessToken, db);
+    public void find() {
+        new findMyUser("WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE");
     }
     }
 

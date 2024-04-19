@@ -9,6 +9,10 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoIterable;
 import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
 import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
+import org.example.Database;
+import org.example.TweetsLookup;
+import org.example.findMyUser;
+import org.example.postTweet;
 import org.slf4j.*;
 import org.bson.Document;
 
@@ -29,14 +33,14 @@ public class Main {
         // tweets: Tweet Content
         // accessToken: Access Token for OAuth2 from Postman
         // db: Instance of MongoDB
-        String tweets = "hello world! this is the tweets from my java app today is wednesday!";
-        String accessToken = "eHUtaE16X2hRb0pEc3BHUDRFUklBSi1QLWNDNEY0TmlnMmRlQUdYLVZYUFBUOjE3MTM0MDc1MjIxNzg6MTowOmF0OjE";
+        String tweets = "hello world! this is the tweets from my java!!!!!!!!!!!!!";
+        String accessToken = "WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE";
         // function1: Post new Tweets
         new postTweet(tweets, accessToken, db);
         System.out.println("Successfully write record to the database!");
 
         // function2: Display your Twitter user ID
-        new findMyUser(accessToken, db);
+        new findMyUser(accessToken);
 
         // function3: Delete Tweets by ID
         // new deleteTweetById(accessToken, "1780754482315644964", db);

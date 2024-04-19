@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class findMyUser {
-    public findMyUser(String accessToken, Database db) {
+    public findMyUser(String accessToken) {
         TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2(
                 "d0kzQnBOcDl3Y3RfUXhVcHVha3Q6MTpjaQ",
                 "C105RUOmrd6zOth8BCD3TbWUj4KlfxXxEIjCGJYBM6tO59JB-a",
