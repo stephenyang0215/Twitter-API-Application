@@ -1,6 +1,0 @@
-<repositories>
-    <repository>
-        <id>twitterdev</id>
-        <url>https://github.com/twitterdev/twitter-api-java-sdk.git</url>
-    </repository>
-</repositories>
