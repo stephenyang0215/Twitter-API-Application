@@ -7,5 +7,3 @@ mongoimport --authenticationDatabase admin --uri="mongodb://root:password@mongod
 mongoimport --authenticationDatabase admin --uri="mongodb://root:password@mongodb:27017" --username root --password password --file Recent-Search.json  --collection recentSearch
 mongoimport --authenticationDatabase admin --uri="mongodb://root:password@mongodb:27017" --username root --password password --file Timelines.json  --collection timelines
 mongoimport --authenticationDatabase admin --uri="mongodb://root:password@mongodb:27017" --username root --password password --file Tweets-Lookup.json  --collection tweetsLookup
-#self-check
-#db.timelines.show()
