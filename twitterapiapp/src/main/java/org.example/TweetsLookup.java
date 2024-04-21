@@ -6,8 +6,8 @@ public class TweetsLookup {
 
     Database db = new Database();
 
-    public void parsing(int id) {
-        Document retrieve = db.lookUp("tweetsLookup", id);
+    public void parsing(String collection, int id) {
+        Document retrieve = db.lookUp(collection, id);
 
         // get the values from json object
         Integer userid = (Integer) retrieve.get("_id");
