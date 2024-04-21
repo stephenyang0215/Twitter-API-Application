@@ -1,5 +1,6 @@
 import Card from '@/components/Card/TweetCard';
 import { Container } from '@mantine/core';
+
 const data =
 {
     "records": [

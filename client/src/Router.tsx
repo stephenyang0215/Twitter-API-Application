@@ -1,9 +1,11 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import {LoginPageComponent} from './pages/Login.page';
 import { HomePage } from './pages/Home.page';
 import { BookmarksPage } from './pages/Bookmarks.page';
 import { TweetsLookupPage } from './pages/TweetsLookup.page';
 import { RecentSearchPage } from './pages/RecentSearch.page';
+import { BenchTask } from 'vitest';
+
 const router = createBrowserRouter([
   {
     path: '/login',
@@ -24,10 +26,12 @@ const router = createBrowserRouter([
   {
     path: '/recentsearch',
     element: <RecentSearchPage />,
-  }
+  },
+
   
 ]);
 
 export function Router() {
-  return <RouterProvider router={router} />;
-}
+  return <RouterProvider router={router} />;}
+
+

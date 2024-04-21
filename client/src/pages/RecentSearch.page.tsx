@@ -1,5 +1,7 @@
 import Card from '@/components/Card/TweetCard';
+
 import { Container } from '@mantine/core';
+
 const data =
 {
     "record": [
@@ -40,6 +42,8 @@ const data =
       }
     ]
   }
+
+  // /findAllRecentSearch
 export function RecentSearchPage() {
     return(
         <div>

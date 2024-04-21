@@ -5,15 +5,25 @@ import LoginButton from '@/components/LoginButton/LoginButton';
 import TweetCard from '@/components/Card/TweetCard';
 import PostCard from '@/components/PostCard';
 import mediaImage from '@/0tter.jpg'
-
+import { useEffect, useState } from 'react';
 export function HomePage() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('/http://localhost:8080/findAllTimelines') // replace with your actual endpoint
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  
+
   return (
     <AppShell
     header={{ height: 60 }}
     navbar={{
       width: 300,
       breakpoint: 'sm',
-      collapsed: { mobile: !opened },
+      collapsed: { mobile: !open },
     }}
     padding="md"
     
@@ -29,11 +39,13 @@ export function HomePage() {
   </AppShell.Header>
   <AppShell.Navbar>
     <Stack>
-      
-
+      <a href="/bookmarks">Bookmarks</a>
+      <a href="/lookup">look up</a>
+      <a href="/recentsearch">recent search</a>
     </Stack>
   </AppShell.Navbar>
-      <Stack
+    <AppShell.Main>
+    <Stack
       h={1000}
       bg="var(--mantine-color-body)"
       align="center"
@@ -43,15 +55,20 @@ export function HomePage() {
      
       {/* <Welcome /> */}
       {/* <ColorSchemeToggle /> */}
-      <TweetCard
-        name="Stephen Yang"
-        account="stephenyang0215"
-        time="7:03 PM · Mar 6, 2024"
-        tweet="Hello World!"
-        views= "100"
-        imageUrl="mediaImage"
-        />
+      
+        {data.map((tweet) => (
+          <TweetCard
+            key={tweet.id}
+            name={tweet.name}
+            username={tweet.username}
+            content={tweet.content}
+            avatar={tweet.avatar}
+            image={tweet.image}
+          />
+        ))}
+   
     </Stack>
+    </AppShell.Main>
 
 </AppShell>
   
