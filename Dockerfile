@@ -3,7 +3,7 @@ FROM maven:3.8.3-openjdk-8 as maven
 # copy pom to get off-line dependencies
 COPY pom.xml ./pom.xml
 # copy your other files
-COPY ./data ./data
+COPY twitterapiapp/data ./data
 COPY ./src ./src
 # build up project
 RUN mvn dependency:go-offline package -B

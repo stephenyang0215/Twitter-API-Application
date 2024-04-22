@@ -12,7 +12,7 @@ services:
       - mongodb-data:/data/db
 
   mongo_seeder:
-    build: mongo-seed/.
+    build: twitterapiapp/mongo-seed
     image: mongo-seed
     links:
       - mongodb
