@@ -65,10 +65,18 @@ public class Database {
 //        System.out.println(iterable1.first());
         //importJson("bookmarksLookup", "data/Recent-Search.json");
         timelines = database.getCollection("timelines");
-        //MongoIterable<Document> iterable2 = timelines.find();
+        MongoIterable<Document> iterable2 = timelines.find();
+        //if (iterable2.first() == null){
+        //    String filePath = "data/Timelines.json";
+        //    addTweets_LookuptoDB("timelines", filePath);
+        //}
 //        System.out.println(iterable2.first());
         //importJson("timelines", "data/Timelines.json");
         tweetsLookup = database.getCollection("tweetsLookup");
+        MongoIterable<Document> iterable3 = tweetsLookup.find();
+        if (iterable3.first() == null){
+            String filePath = "data/Tweets-Lookup.json";
+            addTweets_LookuptoDB("tweetsLookup", filePath);}
         //MongoIterable<Document> iterable3 = tweetsLookup.find();
 //        if (iterable3.first() == null){
 //            String filePath = "data/Tweets-Lookup.json";
