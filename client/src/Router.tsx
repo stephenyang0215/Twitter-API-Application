@@ -6,6 +6,7 @@ import { TweetsLookupPage } from './pages/TweetsLookup.page';
 import { RecentSearchPage } from './pages/RecentSearch.page';
 import { BenchTask } from 'vitest';
 
+import { TimelinePage } from './pages/Timeline.page';
 const router = createBrowserRouter([
   {
     path: '/login',
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     path: '/recentsearch',
     element: <RecentSearchPage />,
   },
+  {
+    path: '/timeline',
+    element: <TimelinePage />,
+  }
 
   
 ]);

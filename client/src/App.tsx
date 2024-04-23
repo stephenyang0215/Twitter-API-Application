@@ -10,9 +10,7 @@ export default function App() {
     
   
     <MantineProvider theme={theme}>
-      <Router/>
-   
-      
+      <Router />
     </MantineProvider>
   );
 }
