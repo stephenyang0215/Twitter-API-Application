@@ -9,27 +9,6 @@ import { useEffect, useState } from 'react';
 export function HomePage() {
   const [data, setData] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('') // replace with your actual endpoint
-  //     .then(response => response.json())
-  //     .then(data => setData(data))
-  //     .then(data => console.log(data)
-  //  }, []);
-
-  //  useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:8080/findAllTimelines'); // Replace with your actual API endpoint
-  //       const jsonData = await response.json();
-  //       console.log(jsonData);
-  //       setData(jsonData);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
-
   
 
   return (
@@ -53,12 +32,14 @@ export function HomePage() {
       </Container>
   </AppShell.Header>
   <AppShell.Navbar>
+  <Container>
     <Stack>
       <a href="/bookmarks">Bookmarks</a>
-      <a href="/lookup">look up</a>
-      <a href="/recentsearch">recent search</a>
+      <a href="/lookup">Look up</a>
+      <a href="/recentsearch">Recent search</a>
       <a href="/timeline">Timelines</a>
     </Stack>
+    </Container>
   </AppShell.Navbar>
     <AppShell.Main>
     <Stack
@@ -68,20 +49,6 @@ export function HomePage() {
       gap="sm"
     >
       <PostCard />
-     
-      {/* <Welcome /> */}
-      {/* <ColorSchemeToggle /> */}
-      
-        {/* {data.map((tweet) => (
-          <TweetCard
-            key={tweet.id}
-            name={tweet.name}
-            username={tweet.username}
-            content={tweet.content}
-            avatar={tweet.avatar}
-            image={tweet.image}
-          />
-        ))} */}
    
     </Stack>
     </AppShell.Main>

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { Container } from '@mantine/core';
+import {AppShell, Container, Group, TextInput,Text, Button, Card, Stack, AppShellHeader } from '@mantine/core';
 import TweetCard from '@/components/Card/TweetCard';
 interface Tweet {
     _id: number,
@@ -32,11 +32,11 @@ export function TimelinePage() {
           
       }, []);
     return(
-        <>
-         <div>
-            <h1>time line</h1>
-            
-        </div>
+        <AppShell>
+        <Container>
+            <div>
+               <h1>Timeline</h1>
+            </div>
         <Container>
         {data.map((item: dataItem) => {
             console.log(item.id),
@@ -55,7 +55,18 @@ export function TimelinePage() {
         })}
 
         </Container>
-        </>
+                <AppShell.Navbar>
+                <Container>
+                    <Stack>
+                        <a href="/">HomePage</a>
+                        <a href="/bookmarks">Bookmarks</a>
+                        <a href="/lookup">Look up</a>
+                        <a href="/recentsearch">Recent search</a>
+                    </Stack>
+                    </Container>
+                </AppShell.Navbar>
+                </Container>
+                </AppShell>
        
     )
 }

@@ -1,5 +1,5 @@
+import {AppShell, Container, Group, TextInput,Text, Button, Card, Stack, AppShellHeader } from '@mantine/core';
 import TweetCard from '@/components/Card/TweetCard';
-import { Container } from '@mantine/core';
 import { useState, useEffect } from 'react';
 
 interface Tweet {
@@ -20,10 +20,6 @@ interface Tweet {
     tweets: Tweet[];
   }
 
-
-
-
-
 export function BookmarksPage() {
     const [data, setData] = useState<dataItem[]>([]);
 
@@ -38,6 +34,7 @@ export function BookmarksPage() {
       }, []);
 
     return(
+    <AppShell>
         <Container>
     <div>
             <h1>Bookmarks</h1>
@@ -59,8 +56,18 @@ export function BookmarksPage() {
           ))
         })}
         </Container>
-    
+        <AppShell.Navbar>
+            <Container>
+            <Stack>
+                <a href="/">HomePage</a>
+                <a href="/lookup">Look up</a>
+                <a href="/recentsearch">Recent search</a>
+                <a href="/timeline">Timelines</a>
+            </Stack>
+            </Container>
+        </AppShell.Navbar>
         </Container>
+        </AppShell>
     )
     
 }
