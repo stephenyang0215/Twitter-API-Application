@@ -2,33 +2,69 @@ import {AppShell, Container, Group, TextInput,Text, Button, Card, Stack, AppShel
 import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import LoginButton from '@/components/LoginButton/LoginButton';
-import TweetCard from '@/components/Card/TweetCard';
+import HomeCard from '@/components/HomeCard';
 import PostCard from '@/components/PostCard';
 import mediaImage from '@/0tter.jpg'
 import { useEffect, useState } from 'react';
+
+
+interface Tweet {
+  id: string,
+  tweets: string;
+}
+
 export function HomePage() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Tweet []>([]);
 
-  // useEffect(() => {
-  //   fetch('') // replace with your actual endpoint
-  //     .then(response => response.json())
-  //     .then(data => setData(data))
-  //     .then(data => console.log(data)
-  //  }, []);
+   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/findAllTweets'); // Replace with your actual API endpoint
+        const jsonData = await response.json();
+        console.log(jsonData);
+        setData(jsonData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
-  //  useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:8080/findAllTimelines'); // Replace with your actual API endpoint
-  //       const jsonData = await response.json();
-  //       console.log(jsonData);
-  //       setData(jsonData);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  const handleDelete = async (id: string) => {
+    const response = await fetch(
+      `http://localhost:8080/removeTweetsById?id=${encodeURIComponent(id)}&accessToken=${encodeURIComponent("OWVtcHhTTEFIdkFsQ1RLOEFQNjBPRU9ETDJ5SHBkNThwOHRRdGhXZmF5YTByOjE3MTQwNzYzNTU1NTg6MToxOmF0OjE")}`,{
+    
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        // Include other headers as required
+    },
+    
+    });
+    if (response.ok) {
+      console.log('Tweet deleted');
+    } else {
+      console.error('Failed to delete tweet');
+    } 
+    const newData = data.filter(item => item.id !== id);
+    setData(newData);
+  }
+  
+  const handlePost = async (tweetText: string) => {
+    const response = await fetch(
+      `http://localhost:8080/addTweets?accessToken=${encodeURIComponent("OWVtcHhTTEFIdkFsQ1RLOEFQNjBPRU9ETDJ5SHBkNThwOHRRdGhXZmF5YTByOjE3MTQwNzYzNTU1NTg6MToxOmF0OjE")}&Tweets=${encodeURIComponent(tweetText)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
+    if (response.ok) {
+      console.log('Tweet posted');
+    } else {
+      console.error('Failed to post tweet');
+    }
+  
+  }
 
   
 
@@ -49,7 +85,7 @@ export function HomePage() {
       
     <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
       <Text style={{ color: 'white', fontWeight: 1000 }}>Twitter Fetch</Text>
-      <LoginButton/>
+      
       </Container>
   </AppShell.Header>
   <AppShell.Navbar>
@@ -62,26 +98,35 @@ export function HomePage() {
   </AppShell.Navbar>
     <AppShell.Main>
     <Stack
-      h={1000}
+      // h={1000}
       bg="var(--mantine-color-body)"
       align="center"
       gap="sm"
     >
-      <PostCard />
+      <PostCard 
+        onPost={handlePost}
+      />
      
       {/* <Welcome /> */}
       {/* <ColorSchemeToggle /> */}
       
-        {/* {data.map((tweet) => (
-          <TweetCard
-            key={tweet.id}
-            name={tweet.name}
-            username={tweet.username}
-            content={tweet.content}
-            avatar={tweet.avatar}
-            image={tweet.image}
-          />
-        ))} */}
+      {data.map((item: Tweet) => {
+            // console.log(item.id),
+            // console.log(typeof item.id),
+            // console.log(item.tweets),
+            // console.log(typeof item.tweets),
+            return(
+              <HomeCard
+              key={item.id}
+              id={item.id}
+              tweet={item.tweets}
+              onDelete={handleDelete}
+              /> 
+            )
+              
+      })}
+          
+    
    
     </Stack>
     </AppShell.Main>
