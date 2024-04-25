@@ -47,6 +47,7 @@ public class TweetsLookupSpring {
 
 
     public class Record {
+        private String id;
 
         private String tweet;
         private String account;

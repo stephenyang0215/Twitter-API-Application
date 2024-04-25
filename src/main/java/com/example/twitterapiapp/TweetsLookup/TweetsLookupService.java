@@ -1,5 +1,6 @@
 package com.example.twitterapiapp.TweetsLookup;
 
+import com.example.twitterapiapp.postTweets.postTweetsSpring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,4 +34,12 @@ public class TweetsLookupService {
     public List<TweetsLookupSpring> getAllTweetsLookup() {
         return tweetsLookupRepository.findAll();
     }
+
+
+    public List<TweetsLookupSpring> getTweetsLookupByTerm(String term) {
+        List<TweetsLookupSpring> tweetscollections = tweetsLookupRepository.findByTextPattern(term);
+        return tweetscollections;
+    }
+
+
 }
