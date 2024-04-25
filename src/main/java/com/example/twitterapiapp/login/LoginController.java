@@ -13,30 +13,25 @@ import java.util.Map;
 
 @RestController
 public class LoginController {
-//    @GetMapping("/login")
-//    public String login() {
-////        new OAuth20GetAccessToken();
-//
-//    }
+    @GetMapping("/")
+    public String login() {
+        return "This is home page";
+    }
 
     @GetMapping("/secured")
     public String secured() {
         return "This is secured page";
     }
 
+    // @GetMapping("/user")
+    // public Map<String, Object> user(@AuthenticationPrincipal OAuth2User
+    // principal) {
+    // return Collections.singletonMap("name", principal.getAttribute("name"));
+    // }
 
-
-
-
-
-    //@GetMapping("/user")
-    //public Map<String, Object> user(@AuthenticationPrincipal OAuth2User principal) {
-    //    return Collections.singletonMap("name", principal.getAttribute("name"));
-    //}
-
-    //@GetMapping("/findMyUser")
-    //public void find() {
-    //    new findMyUser("WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE");
-    //}
-    }
-
+    // @GetMapping("/findMyUser")
+    // public void find() {
+    // new
+    // findMyUser("WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE");
+    // }
+}
