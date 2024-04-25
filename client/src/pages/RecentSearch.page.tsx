@@ -1,6 +1,5 @@
 import TweetCard from '@/components/Card/TweetCard';
-
-import { Container } from '@mantine/core';
+import {AppShell, Container, Group, TextInput,Text, Button, Card, Stack, AppShellHeader } from '@mantine/core';
 import { useState, useEffect } from 'react';
  
 interface Tweet {
@@ -37,10 +36,11 @@ export function RecentSearchPage() {
   }, []);
 
     return(
-        <div>
-   <div>
-            <h1>recent search</h1>
-        </div>
+        <AppShell>
+        <Container>
+            <div>
+                    <h1>Recent Search</h1>
+                </div>
         <Container>
         {data.map((item: dataItem) => {
             console.log(item.id),
@@ -58,7 +58,18 @@ export function RecentSearchPage() {
           ))
         })}
         </Container>
-        </div>
+        <AppShell.Navbar>
+        <Container>
+            <Stack>
+                <a href="/">HomePage</a>
+                <a href="/bookmarks">Bookmarks</a>
+                <a href="/lookup">Look up</a>
+                <a href="/timeline">Timelines</a>
+            </Stack>
+            </Container>
+        </AppShell.Navbar>
+        </Container>
+        </AppShell>
      
     )
 }

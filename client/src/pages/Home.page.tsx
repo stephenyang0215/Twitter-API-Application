@@ -89,12 +89,14 @@ export function HomePage() {
       </Container>
   </AppShell.Header>
   <AppShell.Navbar>
+  <Container>
     <Stack>
       <a href="/bookmarks">Bookmarks</a>
-      <a href="/lookup">look up</a>
-      <a href="/recentsearch">recent search</a>
+      <a href="/lookup">Look up</a>
+      <a href="/recentsearch">Recent search</a>
       <a href="/timeline">Timelines</a>
     </Stack>
+    </Container>
   </AppShell.Navbar>
     <AppShell.Main>
     <Stack
