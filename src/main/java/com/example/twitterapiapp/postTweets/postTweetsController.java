@@ -1,15 +1,14 @@
 package com.example.twitterapiapp.postTweets;
 import com.twitter.clientlib.model.Get2UsersMeResponse;
-import org.example.findMyUser;
+//import org.example.findMyUser;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.example.postTweet;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})
 @RestController
 public class postTweetsController {
     @Autowired

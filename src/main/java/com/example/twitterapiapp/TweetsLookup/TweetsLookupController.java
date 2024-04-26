@@ -1,9 +1,6 @@
 package com.example.twitterapiapp.TweetsLookup;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,6 +15,12 @@ public class TweetsLookupController {
     @ResponseBody
     public List<TweetsLookupSpring> findAllTweetsLookup() {
         return tweetsLookupService.getAllTweetsLookup();
+    }
+
+    @RequestMapping("/findTweetsLookupByTerm")
+    @ResponseBody
+    public List<TweetsLookupSpring> findTweetsLookupByTerm(@RequestParam("term") String term) {
+        return tweetsLookupService.getTweetsLookupByTerm(term);
     }
 
 }
