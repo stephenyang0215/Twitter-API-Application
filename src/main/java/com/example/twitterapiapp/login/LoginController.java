@@ -7,10 +7,7 @@ import org.example.findMyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.Map;
@@ -30,6 +27,14 @@ public class LoginController {
     public String accessToken() {
         String  accessToken = loginService.Oauth2();
         return "Successfully add the record!";
+    }
+
+    @RequestMapping("/accessTokenByCode")
+    @ResponseBody
+    public String accessTokenByCode(@RequestParam("code") String code) {
+        String pkce_code = loginService.callOauth2(code);
+        System.out.println("Access Token: "+pkce_code);
+        return pkce_code;
     }
 
     }
