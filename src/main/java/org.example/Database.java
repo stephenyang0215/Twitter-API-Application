@@ -35,9 +35,9 @@ public class Database {
     public Database() {
         // host machine connection to database: if your container is running locally:
         // brew services start mongodb-community@7.0
-        // String uri = "mongodb://localhost:27017";
+         String uri = "mongodb://root:password@localhost:27017";
         // container connection to database
-        String uri = "mongodb://root:password@mongodb:27017";
+        //String uri = "mongodb://root:password@mongodb:27017";
         // Construct a ServerApi instance using the ServerApi.builder() method
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
@@ -62,7 +62,7 @@ public class Database {
         // System.out.println(iterable0.first());
         // importJson("bookmarksLookup", "data/Bookmarks-Lookup.json");
         recentSearch = database.getCollection("recentSearch");
-        // MongoIterable<Document> iterable1 = recentSearch.find();
+         MongoIterable<Document> iterable1 = recentSearch.find();
         // System.out.println(iterable1.first());
         // importJson("bookmarksLookup", "data/Recent-Search.json");
         timelines = database.getCollection("timelines");

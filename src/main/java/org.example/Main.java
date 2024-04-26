@@ -7,6 +7,8 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoIterable;
+import com.twitter.clientlib.TwitterCredentialsOAuth2;
+import com.twitter.clientlib.api.TwitterApi;
 import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
 import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
 import org.example.Database;
@@ -23,9 +25,11 @@ public class Main {
         Logger rootLogger = loggerContext.getLogger("org.mongodb.driver");
         rootLogger.setLevel(Level.ERROR);
 
+        //post twitter
+        //TwitterApi api = new TwitterApi(credentials);
         // testing for adding a data in
-        Database db = new Database();
-        TweetsLookup tu = new TweetsLookup();
+        //Database db = new Database();
+        //TweetsLookup tu = new TweetsLookup();
 
         // Run scripts in the Docker Container:
         // Backup plan for posting tweets
@@ -33,15 +37,15 @@ public class Main {
         // tweets: Tweet Content
         // accessToken: Access Token for OAuth2 from Postman
         // db: Instance of MongoDB
-        String tweets = "hello world! this is the tweets from my java!!!!!!!!!!!!!";
-        String accessToken = "WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE";
+        //String tweets = "hello world! this is the tweets from my java!!!!!!!!!!!!!";
+        //String accessToken = "WlVHZXFSbXV6OTl3RHQ0Qm0ybk0waEU2MjhqekJzcmdfZGtwWjRobWV2VnFxOjE3MTM0ODE5MTkwNzg6MToxOmF0OjE";
         // function1: Post new Tweets
         //new postTweet(tweets, accessToken);
-        System.out.println("Successfully write record to the database!");
+        //System.out.println("Successfully write record to the database!");
 
         // function2: Display your Twitter user ID
-        findMyUser me = new findMyUser(accessToken);
-        me.display();
+        //findMyUser me = new findMyUser(accessToken);
+        //me.display();
 
         // function3: Delete Tweets by ID
         // new deleteTweetById(accessToken, "1780754482315644964", db);

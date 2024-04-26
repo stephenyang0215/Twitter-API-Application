@@ -47,6 +47,4 @@ public class postTweetsController {
         postTweetsService.removeTweets(accessToken, id);
         return "Successfully delete the record!";
     }
-
-
 }

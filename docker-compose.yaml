@@ -11,17 +11,17 @@ services:
     volumes:
       - mongodb-data:/data/db
 
-  mongo_seeder:
-    build: mongo-seed/.
-    image: mongo-seed
-    links:
-      - mongodb
-    depends_on:
-      - mongodb
-    volumes:
-      - ./mongo-seed:/mongo-seed
-    command:
-      /mongo-seed/db.sh
+#  mongo_seeder:
+#    build: mongo-seed/.
+#    image: mongo-seed
+#    links:
+#      - mongodb
+#    depends_on:
+#      - mongodb
+#    volumes:
+#      - ./mongo-seed:/mongo-seed
+#    command:
+#      /mongo-seed/db.sh
 
 
   mongo-express:
@@ -42,34 +42,34 @@ services:
     volumes:
       - mongodb-data:/data/db
 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    links:
-      - "mongodb"
-    ports:
-      - "8080:8080"
-    env_file:
-      - .env
-    depends_on:
-      - mongodb
-      - mongo_seeder
-    volumes:
-      - mongodb-data:/data/db
+#  app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    links:
+#      - "mongodb"
+#    ports:
+#      - "8080:8080"
+#    env_file:
+#      - .env
+#    depends_on:
+#      - mongodb
+#      - mongo_seeder
+#    volumes:
+#      - mongodb-data:/data/db
 
-  nodejs:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    links:
-      - "mongodb"
-    ports:
-      - 5173:5173
-    depends_on:
-      - mongodb
-    volumes:
-      - mongodb-data:/data/db
+#  nodejs:
+#    build:
+#      context: ./client
+#      dockerfile: Dockerfile
+#    links:
+#      - "mongodb"
+#    ports:
+#      - 5173:5173
+#    depends_on:
+#      - mongodb
+#    volumes:
+#      - mongodb-data:/data/db
 
 volumes:
   mongodb-data:
