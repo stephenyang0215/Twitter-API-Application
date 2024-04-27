@@ -7,7 +7,6 @@ type HomeCardProps = {
 };
 
 const HomeCard: React.FC<HomeCardProps> = ({id, tweet, onDelete}) => {
-  const theme = useMantineTheme();
 
 
   const handleClickDelete = async () => {
@@ -45,10 +44,10 @@ const HomeCard: React.FC<HomeCardProps> = ({id, tweet, onDelete}) => {
           verticalSpacing={'0.1'}
          >
             
-            <Text weight={500} >Home card</Text>
+            <Text>Home card</Text>
             
 
-            <Text  color={theme.colorScheme === 'dark' ? 'dark' : 'dimmed'}>@ Home card</Text>
+            <Text >@ Home card</Text>
           </SimpleGrid>
         </Group>
         <Text>{tweet}</Text>
@@ -56,10 +55,10 @@ const HomeCard: React.FC<HomeCardProps> = ({id, tweet, onDelete}) => {
         justify='flex-start'
         gap={'1'}
         >
-        <Text size="sm" color={theme.colorScheme === 'dark' ? 'dark' : 'dimmed'}>
+        <Text size="sm" >
           example time(fixed)
         </Text>
-        <Text size='sm' color={theme.colorScheme === 'dark' ? 'dark' : 'dimmed'}>·1 Views(fixed)</Text>
+        <Text size='sm' >·1 Views(fixed)</Text>
         <Text>{id}</Text>
         </Group>
        

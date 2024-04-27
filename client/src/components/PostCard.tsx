@@ -20,7 +20,7 @@ const handleClickPost = async () => {
 
 
   return (
-    <Card p="sm" radius='sm' mt={'10%'} withBorder style={{ width: '80%', height:'flex'}}>
+    <Card padding="sm" radius='sm' mt={'5%'} withBorder style={{ width: '80%', height:'flex'}}>
       <Group align='flex-start'>
         <Avatar color='cyan' size={'md'} radius='xl'>SY</Avatar>
         <Textarea 

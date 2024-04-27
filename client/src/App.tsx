@@ -6,7 +6,7 @@ import { theme } from './theme';
 import { AuthContext, AuthProvider, TAuthConfig } from 'react-oauth2-code-pkce';
 export default function App() {
   return (
-    <MantineProvider theme={theme}>
+  <MantineProvider theme={theme}>
       <Router />
     </MantineProvider>
   );

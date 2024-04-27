@@ -58,6 +58,11 @@ export function TweetsLookupPage() {
                   key={post._id}
                   account={post.account}
                   tweet={post.tweet}
+                  url={post.url}
+                  hashtag={post.hashtag}
+                  search={post.search}
+                  share_tweet={post.share_tweet}
+                  share_url={post.share_url}
                   time={post.time}
                   views={post.views}
               />

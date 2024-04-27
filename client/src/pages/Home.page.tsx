@@ -4,6 +4,7 @@ import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeTo
 import LoginButton from '@/components/LoginButton/LoginButton';
 import HomeCard from '@/components/HomeCard';
 import PostCard from '@/components/PostCard';
+import SearchBar from '@/components/SearchBar';
 import mediaImage from '@/0tter.jpg'
 import { useEffect, useState } from 'react';
 
@@ -17,18 +18,19 @@ export function HomePage() {
   const [data, setData] = useState<Tweet []>([]);
 
    useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:8080/findAllTweets'); // Replace with your actual API endpoint
-        const jsonData = await response.json();
-        console.log(jsonData);
-        setData(jsonData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
     fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/findAllTweets'); // Replace with your actual API endpoint
+      const jsonData = await response.json();
+      console.log(jsonData);
+      setData(jsonData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   const handleDelete = async (id: string) => {
     const response = await fetch(
@@ -46,7 +48,7 @@ export function HomePage() {
     } else {
       console.error('Failed to delete tweet');
     } 
-    const newData = data.filter(item => item.id !== id);
+    const newData = data.filter(item => item.id !== id); //?
     setData(newData);
   }
   
@@ -65,6 +67,16 @@ export function HomePage() {
     }
   
   }
+  const handleSearch = async (searchTerm: string) => {
+    try {
+        const response = await fetch(`http://localhost:8080/findTweetsById?id=${encodeURIComponent(searchTerm)}`); // Replace with your actual API endpoint
+        const jsonData = await response.json();
+        console.log(jsonData);
+        setData(jsonData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+}
 
   
 
@@ -72,16 +84,16 @@ export function HomePage() {
     <AppShell
     header={{ height: 60 }}
     navbar={{
-      width: 300,
+      width: 100,
       breakpoint: 'sm',
       collapsed: { mobile: !open },
     }}
-    padding="md"
+    padding="sm"
     
     >
       
       
-    <AppShell.Header Headerheight={100} p="xs" style={{ backgroundColor: '#1DA1F2', color: 'white' }}>
+    <AppShell.Header p="xs" style={{ backgroundColor: '#1DA1F2', color: 'white' }}>
       
     <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
       <Text style={{ color: 'white', fontWeight: 1000 }}>Twitter Fetch</Text>
@@ -100,7 +112,6 @@ export function HomePage() {
   </AppShell.Navbar>
     <AppShell.Main>
     <Stack
-      // h={1000}
       bg="var(--mantine-color-body)"
       align="center"
       gap="sm"
@@ -108,6 +119,11 @@ export function HomePage() {
       <PostCard 
         onPost={handlePost}
       />
+       <SearchBar  onSearch={handleSearch}/>
+        {data && <HomeCard id={data.id} tweet={data.tweets} onDelete={handleSearch}/>
+        
+        }
+                
      
       {/* <Welcome /> */}
       {/* <ColorSchemeToggle /> */}

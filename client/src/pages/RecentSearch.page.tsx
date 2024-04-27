@@ -49,11 +49,16 @@ export function RecentSearchPage() {
             console.log(typeof item.tweets);
             return item.tweets.map((post: Tweet) => (
               <TweetCard
-                  key={post._id}
-                  account={post.account}
-                  tweet={post.tweet}
-                  time={post.time}
-                  views={post.views}
+              key={post._id}
+              account={post.account}
+              tweet={post.tweet}
+              url={post.url}
+              hashtag={post.hashtag}
+              search={post.search}
+              share_tweet={post.share_tweet}
+              share_url={post.share_url}
+              time={post.time}
+              views={post.views}
               />
           ))
         })}
