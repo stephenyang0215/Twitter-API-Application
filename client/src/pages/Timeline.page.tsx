@@ -64,9 +64,10 @@ export function TimelinePage() {
                 <Container>
                     <Stack>
                         <a href="/">HomePage</a>
-                        <a href="/bookmarks">Bookmarks</a>
-                        <a href="/lookup">Look up</a>
-                        <a href="/recentsearch">Recent search</a>
+                                        <a href="/bookmarks">Bookmarks</a>
+                                        <a href="/lookup">Look up</a>
+                                        <a href="/recentsearch">Recent search</a>
+                                        <a href="/timeline">Timelines</a>
                     </Stack>
                     </Container>
                 </AppShell.Navbar>

@@ -1,17 +1,19 @@
-package com.example.twitterapiapp.TweetsLookup;
+package com.example.twitterapiapp.AllData;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
 import java.util.List;
 
-@Document(collection = "tweetsLookup")
-public class TweetsLookupSpring {
+@Document(collection = "allData")
+public class AllDataSpring {
 //    @Id
 //    private String id;
-//
-//    private String records;
-//    private String account;
-//
+
+
+    public List<Record> records;
+
 //    public String getId() {
 //        return id;
 //    }
@@ -19,23 +21,7 @@ public class TweetsLookupSpring {
 //    public void setId(String id) {
 //        this.id = id;
 //    }
-//
-//    public String getTweets() {
-//        return records;
-//    }
-//
-//    public void setTweets(String tweets) {records = tweets;}
-    @Id
-    private String id;
-    private List<Record>records;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public List<Record> getRecords() {
         return records;
@@ -45,9 +31,12 @@ public class TweetsLookupSpring {
         this.records = records;
     }
 
+
     public class Record {
+
         private Integer id;
-        private String tweet;
+
+        public String tweet;
         private String account;
         private String url;
         private List<String> hashtag;  // Assuming hashtags are stored as an array of strings
@@ -129,6 +118,6 @@ public class TweetsLookupSpring {
         }
 
     }
-
 }
+
 
