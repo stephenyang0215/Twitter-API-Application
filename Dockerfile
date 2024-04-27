@@ -1,5 +1,6 @@
 # Image for build the project
-FROM maven:3.9.1-amazoncorretto-19 as maven
+# FROM maven:3.9.1-amazoncorretto-19 as maven
+FROM maven:3.8.3-openjdk-8 as maven
 # copy pom to get off-line dependencies
 COPY pom.xml ./pom.xml
 # copy your other files
