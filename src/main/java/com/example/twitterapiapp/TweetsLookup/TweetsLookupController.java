@@ -10,17 +10,18 @@ public class TweetsLookupController {
     @Autowired
     TweetsLookupService tweetsLookupService;
 
-
     @RequestMapping("/findAllTweetsLookup")
     @ResponseBody
     public List<TweetsLookupSpring> findAllTweetsLookup() {
         return tweetsLookupService.getAllTweetsLookup();
     }
 
-    @RequestMapping("/findTweetsLookupByTerm")
-    @ResponseBody
-    public List<TweetsLookupSpring> findTweetsLookupByTerm(@RequestParam("term") String term) {
-        return tweetsLookupService.getTweetsLookupByTerm(term);
-    }
+
+//    @RequestMapping("/findTweetByKeyword")
+//    @ResponseBody
+//    public List<TweetsLookupSpring> findTweetsByKeyword(@RequestParam String keyword) {
+//        return tweetsLookupService.getByKeyword(keyword);
+//    }
+
 
 }

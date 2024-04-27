@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,12 +33,4 @@ public class TweetsLookupService {
     public List<TweetsLookupSpring> getAllTweetsLookup() {
         return tweetsLookupRepository.findAll();
     }
-
-
-    public List<TweetsLookupSpring> getTweetsLookupByTerm(String term) {
-        List<TweetsLookupSpring> tweetscollections = tweetsLookupRepository.findByTextPattern(term);
-        return tweetscollections;
-    }
-
-
 }

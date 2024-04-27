@@ -51,9 +51,10 @@ public class Main {
         // new deleteTweetById(accessToken, "1780754482315644964", db);
 
 
-        // System.out.println("From Main-----------------");
-        // System.out.println(db.lookUp("tweetsLookup", 1));
-        // tu.parsing(1);
+//        System.out.println("From Main-----------------");
+//        System.out.println(db.lookUp("allData", "symmetrical triangle"));
+//        tu.parsing("allData", "symmetrical triangle");
+
 
         /*
          * Run scripts locally

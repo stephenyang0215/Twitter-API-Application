@@ -1,10 +1,7 @@
 package org.example;
 
 import com.mongodb.*;
-import com.mongodb.bulk.BulkWriteResult;
 import com.mongodb.client.*;
-import com.mongodb.client.model.BulkWriteOptions;
-import com.mongodb.client.model.InsertOneModel;
 import org.bson.BsonDocument;
 import org.bson.BsonInt64;
 import org.bson.Document;
@@ -14,11 +11,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Database {
     MongoClient client;
@@ -28,6 +26,8 @@ public class Database {
     MongoCollection<Document> recentSearch;
     MongoCollection<Document> timelines;
     MongoCollection<Document> tweetsLookup;
+
+    MongoCollection<Document> allData;
 
     Document document = new Document();
 
@@ -70,13 +70,21 @@ public class Database {
         // System.out.println(iterable2.first());
         // importJson("timelines", "data/Timelines.json");
         tweetsLookup = database.getCollection("tweetsLookup");
-        // MongoIterable<Document> iterable3 = tweetsLookup.find();
-        // if (iterable3.first() == null){
-        // String filePath = "data/Tweets-Lookup.json";
-        // addTweets_LookuptoDB("tweetsLookup", filePath);
-        // }
-        // System.out.println(iterable3.first());
+//         MongoIterable<Document> iterable3 = tweetsLookup.find();
+//         if (iterable3.first() == null){
+//         String filePath = "data/Tweets-Lookup.json";
+//         addTweets_LookuptoDB("tweetsLookup", filePath);
+//         }
+//         System.out.println(iterable3.first());
         // importJson("tweetsLookup", "data/Tweets-Lookup.json");
+        allData = database.getCollection("allData");
+//        MongoIterable<Document> iterable4 = allData.find();
+//        if (iterable4.first() == null) {
+//            String filePath = "data/AllData.json";
+//            addTweets_LookuptoDB("allData", filePath);
+//        }
+//         System.out.println(iterable4.first());
+
     }
 
     public Document InsertDocument(String collection, String key, Object value) {
@@ -99,17 +107,22 @@ public class Database {
     }
 
     // lookup tweets
-    public Document lookUp(String collection, int id) {
+    public List<Document> lookUp(String collection, String keyword) {
         MongoCollection<Document> dbCollection = database.getCollection(collection);
         List<Document> records = dbCollection.find().first().getList("records", Document.class);
 
+        List<Document> tweet_record = new ArrayList<Document>();
+
+        Pattern pattern = Pattern.compile("\\b"+keyword+"\\b", Pattern.UNICODE_CASE);
+
         for (Document record : records) {
-            Integer record_id = record.getInteger("_id");
-            if (record_id.equals(id)) {
-                return record;
+            String record_tweet = record.getString("tweet");
+            Matcher tweet = pattern.matcher(record_tweet);
+            if (tweet.find()){
+                 tweet_record.add(record);
             }
         }
-        return null;
+        return tweet_record;
     }
 
     // add tweets to db

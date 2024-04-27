@@ -1,17 +1,19 @@
-package com.example.twitterapiapp.TweetsLookup;
+package com.example.twitterapiapp.AllData;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
 import java.util.List;
 
-@Document(collection = "tweetsLookup")
-public class TweetsLookupSpring {
+@Document(collection = "allData")
+public class AllDataSpring {
 //    @Id
 //    private String id;
-//
-//    private String records;
-//    private String account;
-//
+
+
+    public List<Record> records;
+
 //    public String getId() {
 //        return id;
 //    }
@@ -19,23 +21,7 @@ public class TweetsLookupSpring {
 //    public void setId(String id) {
 //        this.id = id;
 //    }
-//
-//    public String getTweets() {
-//        return records;
-//    }
-//
-//    public void setTweets(String tweets) {records = tweets;}
-    @Id
-    private String id;
-    private List<Record>records;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public List<Record> getRecords() {
         return records;
@@ -45,17 +31,18 @@ public class TweetsLookupSpring {
         this.records = records;
     }
 
+
     public class Record {
-        private String id;
 
         private Integer id;
-        private String tweet;
+
+        public String tweet;
         private String account;
         private String url;
         private List<String> hashtag;  // Assuming hashtags are stored as an array of strings
         private List<String> search;  // Assuming search terms are stored as an array of strings
         private String shareUrl;  // Combined share_url property (optional)
-        private String time;
+        private Date time;
         private Long views;
 
         public Integer getId(){
@@ -114,11 +101,11 @@ public class TweetsLookupSpring {
             this.shareUrl = shareUrl;
         }
 
-        public String getTime() {
+        public Date getTime() {
             return time;
         }
 
-        public void setTime(String time) {
+        public void setTime(Date time) {
             this.time = time;
         }
 
@@ -131,6 +118,6 @@ public class TweetsLookupSpring {
         }
 
     }
-
 }
+
 
