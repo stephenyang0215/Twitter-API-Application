@@ -1,6 +1,5 @@
 package com.example.twitterapiapp.AllData;
 
-import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,11 +23,11 @@ public class AllDataController {
         return allDataService.getTweetsByKeyword(keyword);
     }
 
-    @RequestMapping("/sortTweets")
-    @ResponseBody
-    public List<AllDataSpring.Record> sortTweets(){
-        return allDataService.getSortedTweets();
-    }
+//    @RequestMapping("/sortTweets")
+//    @ResponseBody
+//    public List<AllDataSpring.Record> sortTweets(){
+//        return allDataService.getSortedTweets();
+//    }
 
 }
 

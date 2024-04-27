@@ -42,7 +42,7 @@ public class AllDataSpring {
         private List<String> hashtag;  // Assuming hashtags are stored as an array of strings
         private List<String> search;  // Assuming search terms are stored as an array of strings
         private String shareUrl;  // Combined share_url property (optional)
-        private Date time;
+        private String time;
         private Long views;
 
         public Integer getId(){
@@ -101,11 +101,11 @@ public class AllDataSpring {
             this.shareUrl = shareUrl;
         }
 
-        public Date getTime() {
+        public String getTime() {
             return time;
         }
 
-        public void setTime(Date time) {
+        public void setTime(String time) {
             this.time = time;
         }
 

@@ -34,13 +34,13 @@ public class AllDataService {
         return tweets;
     }
 
-    public List<AllDataSpring.Record> getSortedTweets(){
-        List<AllDataSpring.Record> tweets = new ArrayList<>();
-        for (AllDataSpring record : allDataRepository.findAll()) {
-            for (AllDataSpring.Record tweet : record.getRecords()) {
-                System.out.println(tweet.getTime());
-            }
-        }
-        return tweets;
-    }
+//    public List<AllDataSpring.Record> getSortedTweets(){
+//        List<AllDataSpring.Record> tweets = new ArrayList<>();
+//        for (AllDataSpring record : allDataRepository.findAll()) {
+//            for (AllDataSpring.Record tweet : record.getRecords()) {
+//                System.out.println(tweet.getTime());
+//            }
+//        }
+//        return tweets;
+//    }
 }
