@@ -53,8 +53,9 @@ public class LoginController {
             Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, pkce_code, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
+            String redirectUrl = "http://localhost:5173/auth-success?token=" + pkce_code;
             try {
-                response.sendRedirect("/");
+                response.sendRedirect(redirectUrl);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -67,7 +68,7 @@ public class LoginController {
     }
     private UserDetails createUserDetails(String pkce_code){
         return User.withUsername("user")
-                .password("1234")
+                .password("")
                 .authorities("ROLE_USER")
                 .build();
     }
