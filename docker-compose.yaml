@@ -45,7 +45,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: src/Dockerfile
     links:
       - "mongodb"
     ports:
