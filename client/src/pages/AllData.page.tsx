@@ -40,16 +40,12 @@ export function AllDataPage() {
  
 
     return(
-    
+    <AppShell>
         <Container>
           <h1>ALL DATA</h1>
           
         <Container>
         {data.map((item: dataItem) => {
-            // console.log(item.id),
-            // console.log(typeof item.id),
-            // console.log(item.tweets),
-            // console.log(typeof item.tweets);
             return (item.records.map((post: Tweet) =>
               <TweetCard
                   key={post._id}
@@ -68,7 +64,20 @@ export function AllDataPage() {
         })}
         </Container>
         
-        </Container>
+        <AppShell.Navbar>
+                    <Container>
+                    <Stack>
+                        <a href="/">HomePage</a>
+                              <a href="/alldata">ALL DATA</a>
+                              <a href="/searchAll">search Timelines</a>
+                              <a href="/searchPost">search profile</a>
+                              <a href="/bookmarks">Bookmarks</a>
+                              <a href="/me">Profile</a>
+                    </Stack>
+                    </Container>
+                </AppShell.Navbar>
+                </Container>
+                </AppShell>
         
     );
     

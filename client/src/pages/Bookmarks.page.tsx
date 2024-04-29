@@ -65,10 +65,11 @@ export function BookmarksPage() {
             <Container>
             <Stack>
                 <a href="/">HomePage</a>
-                <a href="/bookmarks">Bookmarks</a>
-                <a href="/lookup">Look up</a>
-                <a href="/recentsearch">Recent search</a>
-                <a href="/timeline">Timelines</a>
+                                              <a href="/alldata">ALL DATA</a>
+                                              <a href="/searchAll">search Timelines</a>
+                                              <a href="/searchPost">search profile</a>
+                                              <a href="/bookmarks">Bookmarks</a>
+                                              <a href="/me">Profile</a>
             </Stack>
             </Container>
         </AppShell.Navbar>

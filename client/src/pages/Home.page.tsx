@@ -79,7 +79,7 @@ export function HomePage() {
     <AppShell
     header={{ height: 60 }}
     navbar={{
-      width: 100,
+      width: 200,
       breakpoint: 'sm',
       collapsed: { mobile: !open },
     }}
@@ -99,13 +99,12 @@ export function HomePage() {
   <Container>
     <Stack>
       <a href="/">HomePage</a>
-      <a href="/bookmarks">Bookmarks</a>
-      <a href="/lookup">Look up</a>
-      <a href="/recentsearch">Recent search</a>
-      <a href="/timeline">Timelines</a>
       <a href="/alldata">ALL DATA</a>
       <a href="/searchAll">search Timelines</a>
       <a href="/searchPost">search profile</a>
+      <a href="/bookmarks">Bookmarks</a>
+      <a href="/me">Profile</a>
+
       
     </Stack>
     </Container>
@@ -122,10 +121,6 @@ export function HomePage() {
    
  
  {data.map((item: Tweet) => {
-        // console.log(item.id),
-        // console.log(typeof item.id),
-        // console.log(item.tweets),
-        // console.log(typeof item.tweets),
         return(
           <HomeCard
           key={item.id}
@@ -135,10 +130,7 @@ export function HomePage() {
           /> 
         )
           
-  })} 
-          
-
-    
+  })}
     </Stack>
     </AppShell.Main>
 

@@ -1,3 +1,4 @@
+import {AppShell, Container, Group, TextInput,Text, Button, Card, Stack, AppShellHeader } from '@mantine/core';
 import { useEffect, useState } from 'react';
 
 interface dataItem{
@@ -37,7 +38,9 @@ export function MePage() {
   };
  
   return (
-    <>
+  <AppShell>
+  <Container>
+
     {userData ? (
         <div>
             <p>ID: {userData.id}</p>
@@ -47,7 +50,21 @@ export function MePage() {
     ) : (
         <p>No user data available</p>
     )}
-</>
+    <AppShell.Navbar>
+                <Container>
+                <Stack>
+                    <a href="/">HomePage</a>
+                                                  <a href="/alldata">ALL DATA</a>
+                                                  <a href="/searchAll">search Timelines</a>
+                                                  <a href="/searchPost">search profile</a>
+                                                  <a href="/bookmarks">Bookmarks</a>
+                                                  <a href="/me">Profile</a>
+                </Stack>
+                </Container>
+            </AppShell.Navbar>
+            </Container>
+            </AppShell>
+
   );    
 }
 

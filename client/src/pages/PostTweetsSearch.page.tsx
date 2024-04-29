@@ -1,6 +1,6 @@
 import SearchBar from '@/components/SearchBar';
 import HomeCard from '@/components/HomeCard';
-import { Container } from '@mantine/core';
+import {AppShell, Container, Group, TextInput,Text, Button, Card, Stack, AppShellHeader } from '@mantine/core';
 import { useState} from 'react';
 
 
@@ -49,6 +49,7 @@ export function PostTweetsSearchPage() {
 
 
     return(
+    <AppShell>
         <Container>
             <SearchBar  onSearch={handleSearch}/>
                 {data && <HomeCard id={data.id} tweet={data.tweets} onDelete={handleDelete}/>
@@ -57,7 +58,20 @@ export function PostTweetsSearchPage() {
 
 
 
-        </Container>
+        <AppShell.Navbar>
+                    <Container>
+                    <Stack>
+                        <a href="/">HomePage</a>
+                                                      <a href="/alldata">ALL DATA</a>
+                                                      <a href="/searchAll">search Timelines</a>
+                                                      <a href="/searchPost">search profile</a>
+                                                      <a href="/bookmarks">Bookmarks</a>
+                                                      <a href="/me">Profile</a>
+                    </Stack>
+                    </Container>
+                </AppShell.Navbar>
+                </Container>
+                </AppShell>
     )
     
 }
