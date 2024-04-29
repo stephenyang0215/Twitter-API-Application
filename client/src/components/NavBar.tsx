@@ -4,11 +4,11 @@ export function NavBar(){
         <Container>
     <Stack>
       <a href="/">HomePage</a>
+      <a href="/alldata">ALL Post</a>
+      <a href="/searchAll">Search Timelines</a>
+      <a href="/searchPost">Search Post</a>
       <a href="/bookmarks">Bookmarks</a>
-      <a href="/lookup">Look up</a>
-      <a href="/recentsearch">Recent search</a>
-      <a href="/timeline">Timelines</a>
-      <a href="/allData">All Data temp</a>
+      <a href="/me">Profile</a>
     </Stack>
     </Container>
     )

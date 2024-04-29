@@ -51,22 +51,25 @@ export function PostTweetsSearchPage() {
     return(
     <AppShell>
         <Container>
+                <h1>Search for post</h1>
+
+                        <Container>
             <SearchBar  onSearch={handleSearch}/>
                 {data && <HomeCard id={data.id} tweet={data.tweets} onDelete={handleDelete}/>
                 }
 
 
 
-
+        </Container>
         <AppShell.Navbar>
                     <Container>
                     <Stack>
                         <a href="/">HomePage</a>
-                                                      <a href="/alldata">ALL DATA</a>
-                                                      <a href="/searchAll">search Timelines</a>
-                                                      <a href="/searchPost">search profile</a>
-                                                      <a href="/bookmarks">Bookmarks</a>
-                                                      <a href="/me">Profile</a>
+                        <a href="/alldata">All Post</a>
+                        <a href="/searchAll">Search Timeline</a>
+                        <a href="/searchPost">Search Post</a>
+                        <a href="/bookmarks">Bookmarks</a>
+                        <a href="/me">Profile</a>
                     </Stack>
                     </Container>
                 </AppShell.Navbar>
