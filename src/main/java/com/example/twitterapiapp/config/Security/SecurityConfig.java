@@ -10,17 +10,26 @@ import org.springframework.security.web.context.SecurityContextPersistenceFilter
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig  {
+
+
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .addFilter(new SecurityContextPersistenceFilter())
                 .authorizeRequests( auth ->{
                     auth.requestMatchers("/login", "/accessTokenByCode").permitAll();
-                     auth.anyRequest().authenticated();
+                    auth.anyRequest().authenticated();
                  })
-                .build();
+                .formLogin(formLogin -> formLogin
+                        .loginPage("/login")
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .permitAll()
+                )
 
+                .build();
     }
 
 
