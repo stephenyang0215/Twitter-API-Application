@@ -1,5 +1,5 @@
 import HomeCard from '@/components/HomeCard';
-import { Container, Button } from '@mantine/core';
+import { Container, Button, rgba } from '@mantine/core';
 import { useContext } from 'react';
 
 
@@ -17,15 +17,18 @@ export function LoginPage () {
         });
         if (response.ok) {
             const authUrl = await response.text();
-            window.open(authUrl, '_blank');
+            window.open(authUrl, '_current');
           console.log('received auth url');
+          const accessToken = await fetch(`http://localhost:8080/getAccessToken`);
         } else {
           console.error('Failed to receive auth url');
         } 
 
       }
+    
     return (
         <Container bg={'blue'}>
+
         <Container 
         style={{ display: 'grid', justifyContent: 'center', alignItems: 'center', height: '100%' }}
         

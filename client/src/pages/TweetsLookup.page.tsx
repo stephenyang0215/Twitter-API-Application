@@ -70,6 +70,7 @@ export function TweetsLookupPage() {
         })}
           
             
+  
         </Container>
         <AppShell.Navbar>
         <Container>

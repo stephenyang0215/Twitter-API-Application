@@ -18,7 +18,7 @@ const handleClickSearch = async () => {
     <Grid align='center'>
     
     <Input 
-    placeholder="search here by Id"
+    placeholder="search here by Id or keyword"
     radius={'sm'}
     onChange={(event) => setSearchTerm(event.currentTarget.value)} 
     />
@@ -35,5 +35,4 @@ const handleClickSearch = async () => {
     </Card>
   );
 };
-
 export default SearchBar;

@@ -9,4 +9,25 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.mjs',
   },
+  build: {
+    outDir: 'dist'
+  },
+  base: './', // Set the base URL for your application
+  publicDir: 'public', // Specify the directory for static assets
+  resolve: {
+    alias: {
+      '@': '/src', // Set up an alias for the src directory
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'], // Optimize dependencies
+  },
+  // Add this section to configure the fallback to index.html
+  server: {
+    historyApiFallback: {
+      index: '/index.html',
+    },
+  },
+
+
 });

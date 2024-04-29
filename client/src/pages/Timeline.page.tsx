@@ -71,7 +71,7 @@ export function TimelinePage() {
                     </Stack>
                     </Container>
                 </AppShell.Navbar>
-                </Container>
+        </Container>
                 </AppShell>
        
     )
