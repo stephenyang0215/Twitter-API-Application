@@ -49,26 +49,21 @@ public class postTweet {
             e.printStackTrace();
         }
     }
-    //Trigger the post Tweets endpoints
+    //Trigger the posting Tweets endpoints
     public postTweet(String tweets, String accessToken) {
         TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2(
                 System.getenv("TWITTER_OAUTH2_CLIENT_ID"),
                 System.getenv("TWITTER_OAUTH2_CLIENT_SECRET"),
                 accessToken,
                 System.getenv("TWITTER_OAUTH2_REFRESH_TOKEN"));
-        //post twitter
+        //Connect to Twitter server
         TwitterApi api = new TwitterApi(credentials);
         // Set the params values
         TweetCreateRequest tweetCreateRequest = new TweetCreateRequest();
         try {
-            System.out.println("The content is: " + tweets);  // Output user input
+            System.out.println("The content is: " + tweets);  // return tweets content
             response = api.tweets().createTweet(tweetCreateRequest.text(tweets))
                     .execute();
-            //System.out.println(result);
-            //Document document = db.InsertDocument("postTweets","Tweets", tweets);
-            //Document document = db.InsertDocument("postTweets","Tweets", result.toJson());
-            //db.findAll("postTweets", document);
-            //System.out.println("Successfully write record to the database!");
 
         } catch (ApiException e) {
             System.err.println("Exception when calling TweetsApi#createTweet");

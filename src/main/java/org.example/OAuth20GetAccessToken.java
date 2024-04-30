@@ -1,3 +1,7 @@
+/*
+    Class: OAuth20GetAccessToken
+    Description: fetch the access token for application from OAUTH 2.0 authorization on Twitter server
+ */
 package org.example;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.pkce.PKCE;
