@@ -1,3 +1,7 @@
+/*
+    Class: AllDataController
+    Description: The controller for All Post endpoint
+ */
 package com.example.twitterapiapp.AllData;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +26,6 @@ public class AllDataController {
     public List<AllDataSpring.Record> keywordFindTweets(@RequestParam String keyword){
         return allDataService.getTweetsByKeyword(keyword);
     }
-
-//    @RequestMapping("/sortTweets")
-//    @ResponseBody
-//    public List<AllDataSpring.Record> sortTweets(){
-//        return allDataService.getSortedTweets();
-//    }
 
 }
 

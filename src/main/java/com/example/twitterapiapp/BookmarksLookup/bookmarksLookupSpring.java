@@ -1,3 +1,7 @@
+/*
+    Class: bookmarksLookupSpring
+    Description: Building data type for the Bookmarks endpoints
+ */
 package com.example.twitterapiapp.BookmarksLookup;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -6,6 +10,7 @@ import java.util.List;
 
 
 @Document(collection = "bookmarksLookup")
+
 public class bookmarksLookupSpring {
     @Id
     private String id;

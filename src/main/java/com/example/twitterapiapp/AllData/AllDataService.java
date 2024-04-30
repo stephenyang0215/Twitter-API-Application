@@ -1,3 +1,7 @@
+/*
+    Class: AllDataService
+    Description: Building service for the All Data endpoints
+ */
 package com.example.twitterapiapp.AllData;
 
 import org.springframework.beans.factory.annotation.Autowired;

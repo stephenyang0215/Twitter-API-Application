@@ -1,7 +1,10 @@
+/*
+    Class: TweetsLookup
+    Description: Parsing the Lookup data to store in the database
+ */
 package org.example;
 
 import org.bson.Document;
-
 import java.util.List;
 
 public class TweetsLookup {

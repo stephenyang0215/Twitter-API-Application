@@ -1,3 +1,7 @@
+/*
+    Class: loginSpring
+    Description: Building data type for the login endpoints
+ */
 package com.example.twitterapiapp.login;
 
 import org.springframework.data.annotation.Id;

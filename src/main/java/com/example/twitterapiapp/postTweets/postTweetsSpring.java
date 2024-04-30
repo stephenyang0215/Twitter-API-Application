@@ -1,3 +1,7 @@
+/*
+    Class: postTweetsSpring
+    Description: Building data type for the posting Tweets endpoints
+ */
 package com.example.twitterapiapp.postTweets;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

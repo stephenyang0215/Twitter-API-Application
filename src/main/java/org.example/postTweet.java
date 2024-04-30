@@ -1,8 +1,11 @@
+/*
+    Class: postTweet
+    Description: post the Tweets by the application
+ */
 package org.example;
 import java.util.*;
 
 import com.twitter.clientlib.ApiException;
-import com.twitter.clientlib.JSON;
 import com.twitter.clientlib.model.*;
 import com.twitter.clientlib.TwitterCredentialsOAuth2;
 import com.twitter.clientlib.api.TwitterApi;
@@ -22,7 +25,7 @@ public class postTweet {
     public postTweet(Database db) {
         OAuth20GetAccessToken OAuth20 = new OAuth20GetAccessToken();
         TwitterCredentialsOAuth2 credentials = OAuth20.getCredentials();
-        //post twitter
+        //Connect to Twitter server
         TwitterApi api = new TwitterApi(credentials);
         // Set the params values
         TweetCreateRequest tweetCreateRequest = new TweetCreateRequest();
@@ -46,12 +49,13 @@ public class postTweet {
             e.printStackTrace();
         }
     }
+    //Trigger the post Tweets endpoints
     public postTweet(String tweets, String accessToken) {
         TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2(
-                "d0kzQnBOcDl3Y3RfUXhVcHVha3Q6MTpjaQ",
-                "C105RUOmrd6zOth8BCD3TbWUj4KlfxXxEIjCGJYBM6tO59JB-a",
+                System.getenv("TWITTER_OAUTH2_CLIENT_ID"),
+                System.getenv("TWITTER_OAUTH2_CLIENT_SECRET"),
                 accessToken,
-                "https://api.twitter.com/2/oauth2/token");
+                System.getenv("TWITTER_OAUTH2_REFRESH_TOKEN"));
         //post twitter
         TwitterApi api = new TwitterApi(credentials);
         // Set the params values

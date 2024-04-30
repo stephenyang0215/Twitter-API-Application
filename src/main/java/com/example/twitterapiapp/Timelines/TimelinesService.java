@@ -1,3 +1,7 @@
+/*
+    Class: TimelinesService
+    Description: Building service for the Timelines endpoints
+ */
 package com.example.twitterapiapp.Timelines;
 
 import org.springframework.beans.factory.annotation.Autowired;

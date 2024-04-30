@@ -1,32 +1,18 @@
+/*
+    Class: AllDataSpring
+    Description: Building data type for the All Data endpoints
+ */
 package com.example.twitterapiapp.AllData;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.Date;
 import java.util.List;
 
 @Document(collection = "allData")
 public class AllDataSpring {
-//    @Id
-//    private String id;
-
-
     public List<Record> records;
-
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-
-
     public List<Record> getRecords() {
         return records;
     }
-
     public void setRecords(List<Record> records) {
         this.records = records;
     }

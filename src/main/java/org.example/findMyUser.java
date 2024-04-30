@@ -1,3 +1,7 @@
+/*
+    Class: findMyUser
+    Description: Identify the Twitter account the application is on behalf of
+ */
 package org.example;
 
 import com.twitter.clientlib.ApiException;
@@ -15,20 +19,19 @@ public class findMyUser {
     Set<String> tweetFields;
     public findMyUser(String accessToken) {
         TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2(
-                "d0kzQnBOcDl3Y3RfUXhVcHVha3Q6MTpjaQ",
-                "C105RUOmrd6zOth8BCD3TbWUj4KlfxXxEIjCGJYBM6tO59JB-a",
+                System.getenv("TWITTER_OAUTH2_CLIENT_ID"),
+                System.getenv("TWITTER_OAUTH2_CLIENT_SECRET"),
                 accessToken,
-                "https://api.twitter.com/2/oauth2/token");
-        //post twitter
+                System.getenv("TWITTER_OAUTH2_REFRESH_TOKEN"));
+        //connect to twitter server
         api = new TwitterApi(credentials);
-
-        // Set the params values
-        userFields = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of User fields to display.
-        expansions = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of fields to expand.
-        tweetFields = new HashSet<>(Arrays.asList()); // Set<String> | A comma separated list of Tweet fields to display.
+        //generic collections for cached user data
+        userFields = new HashSet<>(Arrays.asList());
+        expansions = new HashSet<>(Arrays.asList());
+        tweetFields = new HashSet<>(Arrays.asList());
 
     }
-
+    //Trigger the find-my-user endpoint
     public Get2UsersMeResponse display() {
         Get2UsersMeResponse result = null;
         try {

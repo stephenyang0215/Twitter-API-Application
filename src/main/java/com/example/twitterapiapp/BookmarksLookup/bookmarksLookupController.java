@@ -1,6 +1,8 @@
+/*
+    Class: bookmarksLookupController
+    Description: The controller for the Bookmarks endpoint
+ */
 package com.example.twitterapiapp.BookmarksLookup;
-import com.example.twitterapiapp.postTweets.postTweetsSpring;
-import com.twitter.clientlib.model.Get2UsersMeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

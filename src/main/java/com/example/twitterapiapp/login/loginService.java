@@ -1,14 +1,14 @@
+/*
+    Class: loginService
+    Description: Building service for the login endpoints
+ */
 package com.example.twitterapiapp.login;
 
-import com.example.twitterapiapp.postTweets.postTweetsRepository;
-import com.example.twitterapiapp.postTweets.postTweetsSpring;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.pkce.PKCE;
 import com.github.scribejava.core.pkce.PKCECodeChallengeMethod;
 import com.twitter.clientlib.TwitterCredentialsOAuth2;
-import com.twitter.clientlib.api.TwitterApi;
 import com.twitter.clientlib.auth.TwitterOAuth20Service;
-import com.twitter.clientlib.model.TweetCreateRequest;
 import org.example.OAuth20GetAccessToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,10 +27,10 @@ public class loginService {
     }
 
     public String callOauth2(String code) {
-//        String GET_URL = "https://twitter.com/i/oauth2/authorize?code_challenge=challenge&code_challenge_method=PLAIN&response_type=code&client_id=ckNFUk9vQ3JTX3ZVWWw4cnBkUVk6MTpjaQ&redirect_uri=https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fcallback&scope=tweet.write%20tweet.read%20users.read%20offline.access&state=state";
 
-        TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2("ckNFUk9vQ3JTX3ZVWWw4cnBkUVk6MTpjaQ",
-                "gtXeHyVC9K9LO3DT0zQtODb-WoeW071kOUDEe4nBqTx7WSF8vJ",
+        TwitterCredentialsOAuth2 credentials = new TwitterCredentialsOAuth2(
+                System.getenv("TWITTER_OAUTH2_CLIENT_ID2"),
+                System.getenv("TWITTER_OAUTH2_CLIENT_SECRET2"),
                 System.getenv("TWITTER_OAUTH2_ACCESS_TOKEN"),
                 System.getenv("TWITTER_OAUTH2_REFRESH_TOKEN"));
         TwitterOAuth20Service service = new TwitterOAuth20Service(

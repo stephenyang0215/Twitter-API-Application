@@ -1,3 +1,7 @@
+/*
+    Class: postTweetsService
+    Description: Building service for the posting Tweets endpoints
+ */
 package com.example.twitterapiapp.postTweets;
 import java.util.List;
 

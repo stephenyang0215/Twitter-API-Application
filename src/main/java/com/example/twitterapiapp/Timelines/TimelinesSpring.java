@@ -1,3 +1,7 @@
+/*
+    Class: TimelinesSpring
+    Description: Building data type for the Timelines endpoints
+ */
 package com.example.twitterapiapp.Timelines;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

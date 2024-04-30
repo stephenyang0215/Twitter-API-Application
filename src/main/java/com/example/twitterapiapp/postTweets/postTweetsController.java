@@ -1,3 +1,7 @@
+/*
+    Class: postTweetsController
+    Description: The controller for the postTweets endpoint
+ */
 package com.example.twitterapiapp.postTweets;
 import com.twitter.clientlib.model.Get2UsersMeResponse;
 //import org.example.findMyUser;

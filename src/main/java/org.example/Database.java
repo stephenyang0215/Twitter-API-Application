@@ -1,3 +1,7 @@
+/*
+    Class: Database
+    Description: Building MongoDB database for the application
+ */
 package org.example;
 
 import com.mongodb.*;
@@ -86,7 +90,7 @@ public class Database {
 //         System.out.println(iterable4.first());
 
     }
-
+    //add document to the collection
     public Document InsertDocument(String collection, String key, Object value) {
         MongoCollection<Document> dbCollection = database.getCollection(collection);
         Document document = new Document();
@@ -94,7 +98,7 @@ public class Database {
         dbCollection.insertOne(document);
         return document;
     }
-
+    //list all the documents for the collection specified
     public void findAll(String collection, Document document) {
         MongoCollection<Document> dbCollection = database.getCollection(collection);
         FindIterable<Document> cursor = dbCollection.find(document);
