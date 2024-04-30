@@ -28,7 +28,7 @@ public class Main {
         //post twitter
         //TwitterApi api = new TwitterApi(credentials);
         // testing for adding a data in
-        //Database db = new Database();
+//        Database db = new Database();
         //TweetsLookup tu = new TweetsLookup();
 
         // Run scripts in the Docker Container:

@@ -80,11 +80,11 @@ public class Database {
 //         System.out.println(iterable3.first());
         // importJson("tweetsLookup", "data/Tweets-Lookup.json");
         allData = database.getCollection("allData");
-//        MongoIterable<Document> iterable4 = allData.find();
-//        if (iterable4.first() == null) {
-//            String filePath = "data/AllData.json";
-//            addTweets_LookuptoDB("allData", filePath);
-//        }
+        MongoIterable<Document> iterable4 = allData.find();
+        if (iterable4.first() == null) {
+            String filePath = "data/AllData.json";
+            addTweets_LookuptoDB("allData", filePath);
+        }
 //         System.out.println(iterable4.first());
 
     }
@@ -134,8 +134,8 @@ public class Database {
             Object parse = new JSONParser().parse(new FileReader(filePath));
             JSONObject jsonObject = (JSONObject) parse;
             JSONArray tweets = (JSONArray) jsonObject.get("records");
-            for (Object file_tweet : tweets) {
-                // when search it gets by index not id so -1
+            //loops the tweets in the record
+            tweets.forEach(file_tweet -> {
                 JSONObject retrieve = (JSONObject) file_tweet;
 
                 // get the values from json object
@@ -154,6 +154,7 @@ public class Database {
                 String time = (String) retrieve.get("time");
                 Long views = (Long) retrieve.get("views");
 
+                //adds the information to database
                 MongoCollection<Document> dbCollection = database.getCollection(collection);
                 document.put("_id", userid);
                 document.put("account", account);
@@ -166,7 +167,7 @@ public class Database {
                 document.put("time", time);
                 document.put("views", views);
                 dbCollection.insertOne(document);
-            }
+            });
 
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);

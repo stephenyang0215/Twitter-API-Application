@@ -5,7 +5,6 @@ type HomeCardProps = {
   tweet: string;
   onDelete: (id: string) => void;
 };
-
 const HomeCard: React.FC<HomeCardProps> = ({id, tweet, onDelete}) => {
 
 

@@ -18,13 +18,15 @@ public class AllDataService {
     @Autowired
     AllDataRepository allDataRepository;
 
-
+    //displays all tweets
     public List<AllDataSpring> getAllData() {
         return allDataRepository.findAll();
     }
 
+    //find the tweets by keyword
     public List<AllDataSpring.Record> getTweetsByKeyword(String keyword) {
         List<AllDataSpring.Record> tweets = new ArrayList<>();
+        //regular expressions
         Pattern pattern = Pattern.compile(".*\\b" + keyword + ".*", Pattern.CASE_INSENSITIVE);
         for (AllDataSpring record : allDataRepository.findAll()) {
             for (AllDataSpring.Record tweet : record.getRecords()) {
@@ -38,13 +40,4 @@ public class AllDataService {
         return tweets;
     }
 
-//    public List<AllDataSpring.Record> getSortedTweets(){
-//        List<AllDataSpring.Record> tweets = new ArrayList<>();
-//        for (AllDataSpring record : allDataRepository.findAll()) {
-//            for (AllDataSpring.Record tweet : record.getRecords()) {
-//                System.out.println(tweet.getTime());
-//            }
-//        }
-//        return tweets;
-//    }
 }

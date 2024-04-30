@@ -36,9 +36,9 @@ public class TimelinesSpring {
         private String tweet;
         private String account;
         private String url;
-        private List<String> hashtag;  // Assuming hashtags are stored as an array of strings
-        private List<String> search;  // Assuming search terms are stored as an array of strings
-        private String shareUrl;  // Combined share_url property (optional)
+        private List<String> hashtag;
+        private List<String> search;
+        private String shareUrl;
         private String time;
         private Long views;
 

@@ -27,11 +27,13 @@ public class postTweetsService {
         return postTweetsRepository.findAll();
     }
 
+    //find tweet post by id
     public postTweetsSpring getByTweetsId(String id) {
         postTweetsSpring Tweets = postTweetsRepository.findTweetsById(id);
         return Tweets;
     }
 
+    //add a tweet
     public postTweetsSpring addTweets(String tweets, String accessToken) {
         postTweetsSpring Tweets = new postTweetsSpring();
         postTweet postTweet = new postTweet(tweets, accessToken);
@@ -41,11 +43,13 @@ public class postTweetsService {
         return postTweetsRepository.save(Tweets);
     }
 
+    //find user
     public Get2UsersMeResponse findMyUser(String accessToken) {
         findMyUser me = new findMyUser(accessToken);
         return me.display();
     }
 
+    //remove a tweet
     public void removeTweets(String accessToken, String id) {
         postTweetsSpring Tweets = new postTweetsSpring();
         Tweets.setId(id);
