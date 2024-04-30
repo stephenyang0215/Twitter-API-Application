@@ -30,12 +30,10 @@ public class Database {
     MongoCollection<Document> recentSearch;
     MongoCollection<Document> timelines;
     MongoCollection<Document> tweetsLookup;
-
     MongoCollection<Document> allData;
-
     Document document = new Document();
 
-    // connect to mongodb
+    // build out the instance for mongodb and connect to the database
     public Database() {
         // host machine connection to database: if your container is running locally:
         // brew services start mongodb-community@7.0

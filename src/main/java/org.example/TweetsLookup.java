@@ -8,7 +8,6 @@ import org.bson.Document;
 import java.util.List;
 
 public class TweetsLookup {
-
     Database db = new Database();
 
     public void parsing(String collection, String keyword) {
