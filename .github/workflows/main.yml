@@ -1,0 +1,10 @@
+name: Hide Sensitive Information
+on: push
+jobs:
+  print-secret-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Mask
+        run: echo "::add-mask::${{ secrets.TWITTER_OAUTH2_ACCESS_TOKEN }}"
+      - name: Echo a secret  
+        run: echo "your secret token is ${{ secrets.TWITTER_OAUTH2_ACCESS_TOKEN }}"
