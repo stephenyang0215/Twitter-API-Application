@@ -7,5 +7,5 @@ jobs:
       - name: Add Mask
         run: echo "::add-mask::${{ secrets.TWITTER_OAUTH2_ACCESS_TOKEN }}"
       - name: Echo a secret  
-        run: echo "$TWITTER_OAUTH2_ACCESS_TOKEN" > ./src/.env
+        run: echo "$TWITTER_OAUTH2_ACCESS_TOKEN" > src/.env
 
