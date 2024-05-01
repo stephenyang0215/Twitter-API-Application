@@ -16,3 +16,5 @@ This project aims to utilize Java's functionality to work with Twitter's (X) API
 
 ### Material:
 [Software User Documentation](https://github.com/stephenyang0215/CS622-Advanced-Programming-Techniques/blob/main/Software_User_Documentation.pdf)
+### Resources:
+[Twitter API Client Library for Java](https://github.com/xdevplatform/twitter-api-java-sdk)
